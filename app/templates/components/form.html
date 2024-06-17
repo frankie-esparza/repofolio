@@ -1,0 +1,24 @@
+<div class="centered-horizontal-container" >
+    <form method="post" action={{ path }} autocomplete="off">
+        {{ form.hidden_tag() }}
+        <table>
+            <tbody class="centered-horizontal-container">
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                <tr>
+                  {% if field.type != 'SubmitField' %}
+                  <td>{{ field.label }}</td>
+                  {% endif %}
+                  <td>
+                    {% if field.type == 'SelectMultipleField' %}
+                      {{ field(class_='select-multiple-field') }}
+                    {% else %}
+                    {{ field }}
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    </form>
+</div>
+

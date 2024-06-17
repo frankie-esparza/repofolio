@@ -1,5 +1,6 @@
 @import url('../variables.css');
 
+#submit:hover,
 a:hover,
 a > strong:hover {
     font-weight: 500;

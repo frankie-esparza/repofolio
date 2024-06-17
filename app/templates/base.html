@@ -14,13 +14,9 @@
     <script src="https://kit.fontawesome.com/57ef72989c.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    {% include "/components/header.html" %}
-      <div class="non-header centered-vertical-container">
-        {% block content %}
-        {% endblock %}  
-      </div>
-    </div>
-  {% include "/scripts/show_video_controls_on_hover.html" %}
-  {% include "/scripts/center_video_on_click.html" %}
+    {% block content %}
+    {% endblock %}  
+    {% include "/scripts/show_video_controls_on_hover.html" %}
+    {% include "/scripts/center_video_on_click.html" %}
   </body>
 </html>

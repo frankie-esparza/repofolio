@@ -8,7 +8,7 @@
 .video-container {
     width: var(--video-width);
     height: var(--video-height);
-    border-radius: 25px;
+    border-radius: var(--border-radius-thumbnails);
 }
 
 .desktop-video{

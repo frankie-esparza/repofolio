@@ -12,6 +12,8 @@ flask-sqlalchemy = "*"
 gunicorn = "*"
 requests = "*"
 whitenoise = "*"
+wtforms = "*"
+flask-wtf = "*"
 
 [dev-packages]
 
