@@ -12,19 +12,20 @@
     --tan: #B08A69;
    
     --font-largest: 50;
-    --font-larger: 20;
+    --font-larger: 30;
     --font-large: 20;
-    --font-medium: 16;
-    --font-small: 14;
-    --font-smallest: 10;
+    --font-medium: 18;
+    --font-small: 16;
+    --font-smallest: 14;
 
-    --header-height: 180px;
+    --border-radius-buttons: 10px;
+    --border-radius-thumbnails: 25px;
+
+    --header-height: 280px;
     --header-height-mobile: 250px;
 
     --profile-pic-size: 300px;
     --profile-pic-size-mobile: 200px;
-
-    --highlight-image-or-video-width: 40vw;
 
     --video-width: 25vw;
     --video-height: 14.0625vw;

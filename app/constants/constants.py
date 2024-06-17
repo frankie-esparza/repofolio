@@ -33,10 +33,11 @@ HEADER_ICON_BUTTONS = [
     }
 ]
 
-TOPICS = {
-   'Full-stack': '/more/?topic=postgresql',
-   'React' : '/more/?topic=react',
-   'Flask': '/more/?topic=flask',
-   'Back-end': '/more/?topic=sql',
-   'Data Structures & Algorithms': '/more/?topic=data-structures&topic=algorithms'
+FILTERS = {
+    'Full-stack': 'postgresql',
+    'React' : 'react',
+    'Python': 'flask',
+    'Back-end': 'sql',
+    'Data Structures': 'data-structures',
+    'Algorithms': 'algorithms',
 }

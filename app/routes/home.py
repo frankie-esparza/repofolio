@@ -1,4 +1,5 @@
 from app.constants.constants import (
+    FILTERS,
     PAGES, 
     GOOGLE_CLOUD_CONSOLE_BUCKET_NAME,
     HEADER_ICON_BUTTONS,
@@ -15,6 +16,7 @@ from app.functions.repos import (
     get_repos_from_db_filtered_by_topics,
     get_highlighted_repos_from_db
 )
+from app.forms.FilterReposForm import FilterReposForm
 
 bp = Blueprint('home', __name__, url_prefix='/')
 app = Flask(__name__)
@@ -34,12 +36,12 @@ def index():
 @bp.route('/highlights')
 def highlights():
     repos = get_highlighted_repos_from_db()
-    return render_template("repos.html", repos=repos, **DEFAULT_VARS)
+    return render_template("highlights.html", repos=repos, **DEFAULT_VARS)
 
 
 @bp.route('/more')
-@bp.route('/more/')
-def projects():
+@bp.route('/more/', methods=["GET", "POST"])
+def more():
     # if user's first time visiting, get repos from github & refresh database
     if not request.cookies.get('first_visit'):
         resp = make_response(redirect(url_for('home.refresh')))
@@ -53,8 +55,18 @@ def projects():
         # if there are no filters, just get repos from db
         else: 
             repos = get_repos_from_db()
-    return render_template('repos.html', repos= repos, **DEFAULT_VARS)
 
+    # handle submission of Filter Repos form
+    form = FilterReposForm()
+    getFormChoices(form)
+    if form.validate_on_submit(): 
+        filters = form.filters.data
+        print('FILTERS', filters)
+        route = '/more?' + ('&').join(f'topic={filter}' for filter in filters )
+        return redirect(route)
+
+    # otherwise, just render all the repos
+    return render_template('more.html', repos= repos, form=form, path=url_for('home.more'), **DEFAULT_VARS)
 
 
 @bp.route('/refresh')
@@ -68,3 +80,12 @@ def refresh():
 @bp.errorhandler(404)
 def page_not_found(error):
     return render_template('error.html', title=f'Error', error=error)
+
+
+def getFormChoices(form):
+    for field in form._fields.keys():
+        field = form[field].name
+        type = form[field].type
+        if (type == 'SelectMultipleField'):
+            options = FILTERS.items()
+            form[field].choices = [(value, key) for (key, value) in options]

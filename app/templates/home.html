@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+{% include "/components/headers/header.html" %}
+<div class="non-header centered-vertical-container">
 <section class="centered-vertical-container">
     <div id="intro-section">
             {% include "/components/profile_pic.html" %}
@@ -25,4 +27,5 @@
             </div>
     </div>
 </section>
+</div>
 {% endblock %}
