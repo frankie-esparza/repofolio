@@ -8,9 +8,7 @@ html,
 body, 
 .content, 
 .centered-vertical-container, 
-.centered-horizontal-container,
-.left-justified-horizontal-container,
-.right-justified-horizontal-container {
+.centered-horizontal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,30 +18,8 @@ body,
     flex-wrap: wrap;
 }
 
-.left-justified-horizontal-container,
-.right-justified-horizontal-container,
 .centered-horizontal-container {
     flex-direction: row;
-}
-
-.repos-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-    margin: 0px;
-    padding: 0px;
-}
-
-.left-justified-horizontal-container {
-    justify-content: start;
-}
-
-.right-justified-horizontal-container {
-    width: 100vw;
-    padding: 20px;
-    justify-content: end;
 }
 
 .non-header {
@@ -51,13 +27,25 @@ body,
     height: auto;
 }
 
-.repo {
+.repos-container {
     display: flex;
-    flex-direction: column;
-    width: var(--video-width);
-    min-width: 200px;
-    margin: 20px;
-    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+    width: 90vw;
+    
+}
+
+.repo {
+    width: 30vw;
+    height: fit-content;
+    min-height: 240px;
+    margin: 0px;
+    padding: 0px;
+    padding-block: 20px;
 }
 
 .repo-button > * {

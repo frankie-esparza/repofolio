@@ -31,14 +31,11 @@
 
 
 @media only screen and (max-width: 1024px) {
+    .repo, 
     .repos-container {
-        margin: 0px;
-        padding: 0px;
+        width: 80vw;
     }
 
-    .repo {
-        width: var(--video-width-mobile);
-    }
 
     iframe,
     video,
