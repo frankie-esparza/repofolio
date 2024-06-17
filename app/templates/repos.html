@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="centered-horizontal-container">
     <div class="repos-container">
         {% for repo in repos %}
         {% include "/components/repo.html" %}
         {% endfor %}
     </div>
-</div>
 {% endblock %}
