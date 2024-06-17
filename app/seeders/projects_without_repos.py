@@ -6,7 +6,7 @@ PROJECTS_WITHOUT_REPOS = [
             Delivered 2 generations of air & water-cooled LED lights from concept to production that are
             now used in farms that use 90% less water and 1% of the land compared to conventional farms.
         ''',
-        'video_filepath': '/videos/plenty-lights.mp4',
+        'video_filename': 'plenty-lights.mp4',
         'thumbnail_filepath': '/thumbnails/plenty-lights.png',
         'priority': 2,
         'highlighted': True,
@@ -21,7 +21,7 @@ PROJECTS_WITHOUT_REPOS = [
         'topics': [
             'matlab'
         ],
-        'video_filepath': '/videos/plenty-heatsinks.mp4',
+        'video_filename': 'plenty-heatsinks.mp4',
         'thumbnail_filepath': '/thumbnails/plenty-heatsinks.png',
         'language': 'matlab',   
         'priority': 3,
@@ -38,7 +38,7 @@ PROJECTS_WITHOUT_REPOS = [
             'signal-processing'
         ],
         'language': 'python',
-        'video_filepath': '/videos/neuralink.mp4',
+        'video_filename': 'neuralink.mp4',
         'thumbnail_filepath': '/thumbnails/neuralink.png',
         'priority': 4,
         'highlighted': True
@@ -51,7 +51,7 @@ PROJECTS_WITHOUT_REPOS = [
             Designed curriculum and hands-on workshops empowering students to bring their ideas to life 
             using the design process, code, electronics, 3D printing, and CAD modeling
         ''',
-        'video_filepath': '/videos/streetcode.mp4',
+        'video_filename': '/streetcode.mp4',
         'thumbnail_filepath': '/thumbnails/streetcode.png',
          'priority': 5,
          'highlighted': True

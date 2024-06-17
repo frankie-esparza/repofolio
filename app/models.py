@@ -5,7 +5,7 @@ PROPS_NOT_IN_GITHUB_RESPONSE = [
     'display_name',
     'priority',
     'highlighted',
-    'video_filepath',
+    'video_filename',
     'thumbnail_filepath'
 ]
 
@@ -33,6 +33,6 @@ class Repo(db.Model):
     display_name = db.Column(db.String(100), nullable=True)
     priority = db.Column(db.Integer, nullable=True)
     highlighted = db.Column(db.Boolean, nullable=True)
-    video_filepath = db.Column(db.String(100), nullable=True) # route for the static video
+    video_filename = db.Column(db.String(100), nullable=True) # route for the static video
     thumbnail_filepath = db.Column(db.String(100), nullable=True) # route for the static thumbnail image
 
