@@ -1,0 +1,11 @@
+@import url('../variables.css');
+
+#profile-pic {
+    width: var(--profile-pic-size);
+    height: var(--profile-pic-size);
+}
+
+.highlight-image {
+    width: var(--highlight-image-or-video-width);
+    border-radius: 25px;
+}

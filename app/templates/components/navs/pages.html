@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        {% for key, value in PAGES.items() %}
+        <li>
+            <button>
+                <a href="{{ PAGES[key] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

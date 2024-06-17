@@ -1,0 +1,40 @@
+:root {
+    --black: #202123;
+    --white: #FFFFFF;
+    --ice: #E8F3FC;
+    --sky: #A3CEF3;
+    --light-grey: #E9ECEF;
+    --grey: #B4B4B8;
+    --cafe-con-leche: #D5BDAF;
+    --sand: #BE9E84;
+    --iced-coffee: #E0CEC3;
+    --creme: #F5EFEB;
+    --tan: #B08A69;
+   
+    --font-largest: 50;
+    --font-larger: 20;
+    --font-large: 20;
+    --font-medium: 16;
+    --font-small: 14;
+    --font-smallest: 10;
+
+    --header-height: 180px;
+    --header-height-mobile: 250px;
+
+    --profile-pic-size: 300px;
+    --profile-pic-size-mobile: 200px;
+
+    --highlight-image-or-video-width: 40vw;
+
+    --video-width: 25vw;
+    --video-height: 14.0625vw;
+
+    --video-width-mobile: 80vw;
+    --video-height-mobile: 45vw;
+
+    --video-width-on-click: 60vw;
+    --video-move-to-center-speed: 0.5s;
+
+    --max-z-index: 1000;
+    --second-to-max-z-index: 999;
+}

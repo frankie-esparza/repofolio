@@ -1,0 +1,36 @@
+@import url('../variables.css');
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    font-size: var(--font-smallest);
+    visibility: hidden;
+    width: fit-content;
+    text-align: center;
+    padding: 2px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* position tooltip below the icon button */
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,43 @@
+@import url('../variables.css');
+
+* {
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    font-size: var(--font-small);
+    color: var(--black);
+    background-color: var(--white);
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: var(--font-medium);
+}
+
+header {
+    top: 0;
+    position: fixed;
+    z-index: var(--second-to-max-z-index);
+    width: 100vw;
+    padding-block: 10px;
+    padding-top: 40px;
+}
+
+
+strong {
+    font-weight: 400;
+}
+
+body,
+html {
+    margin-top: 0px;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+}

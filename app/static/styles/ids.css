@@ -1,0 +1,40 @@
+@import url('variables.css');
+
+#intro-section {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    align-items: center;
+}
+
+#intro-section-text {
+    padding-left: 50px;
+}
+
+#intro-section-text * {
+    font-size: var(--font-large);
+    list-style-type: disc;
+}
+
+#highlights-page {
+    width: 80vw;
+}
+
+#projects-page {
+    width: 80vw;
+}
+
+#title-and-social-nav {
+    justify-content: space-between;
+}
+
+.title-and-social-nav-column {
+    flex: 1;
+}
+
+#main-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

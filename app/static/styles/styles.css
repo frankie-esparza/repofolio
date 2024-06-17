@@ -1,0 +1,17 @@
+/* Variables must be first */
+@import url('variables.css');
+
+@import url('substyles/effects.css');
+@import url('substyles/global.css');
+@import url('substyles/icons.css');
+@import url('substyles/images.css');
+@import url('substyles/navs.css');
+@import url('substyles/tooltips.css');
+@import url('substyles/typography.css');
+@import url('substyles/videos.css');
+@import url('classes.css');
+@import url('variables.css');
+@import url('ids.css');
+
+/* Media queries import must be last */
+@import url('substyles/media-queries.css');

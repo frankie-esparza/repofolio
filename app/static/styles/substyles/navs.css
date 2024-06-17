@@ -1,0 +1,34 @@
+@import url('../variables.css');
+
+ul,
+li {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav,
+nav > ul {
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navlink {
+    font-size: var(--font-large);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.social-nav {
+    margin: 0px;
+    padding: 0px;
+    justify-content: end;
+    margin-right: 40px;
+}
+
+.social-nav-mobile {
+    display: none;
+}

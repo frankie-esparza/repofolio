@@ -1,0 +1,45 @@
+@import url('../variables.css');
+
+
+h1, h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: var(--font-largest);
+    font-weight: 300;
+    letter-spacing: 4px;
+    font-style: normal;
+    padding: 10px;
+    margin: 0px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: var(--font-larger);
+    line-height: 0.5;
+}
+
+h3 {
+    font-size: var(--font-medium);
+    font-weight: 300;
+}
+
+h4 {
+    font-weight: 300;
+}
+
+
+#mobile-title {
+    display: none;
+}
+
+#desktop-title {
+    display: flex;
+    justify-content: center;
+}
+
+.highlight-section-titles {
+    line-height: .5;
+}

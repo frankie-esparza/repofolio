@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        {% for key, value in topics.items() %}
+        <li>
+            <button>
+                <a href="{{ topics[key] }}" class="topic-filter {% if request.path == value %}active{% endif %}">{{ key }}</a>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

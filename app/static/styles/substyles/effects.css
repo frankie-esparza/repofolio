@@ -1,0 +1,7 @@
+@import url('../variables.css');
+
+a:hover,
+a > strong:hover {
+    font-weight: 500;
+    transition: font-weight 0.2s;
+}

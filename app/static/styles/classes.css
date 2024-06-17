@@ -1,0 +1,93 @@
+@import url('variables.css');
+
+.active {
+    font-weight: 600;
+}
+
+html,
+body, 
+.content, 
+.centered-vertical-container, 
+.centered-horizontal-container,
+.left-justified-horizontal-container,
+.right-justified-horizontal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.left-justified-horizontal-container,
+.right-justified-horizontal-container,
+.centered-horizontal-container {
+    flex-direction: row;
+}
+
+.repos-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0px;
+    padding: 0px;
+}
+
+.left-justified-horizontal-container {
+    justify-content: start;
+}
+
+.right-justified-horizontal-container {
+    width: 100vw;
+    padding: 20px;
+    justify-content: end;
+}
+
+.non-header {
+    margin-top: var(--header-height);
+    height: auto;
+}
+
+.repo {
+    display: flex;
+    flex-direction: column;
+    width: var(--video-width);
+    min-width: 200px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.repo-button > * {
+    padding: 0px;
+    margin: 0px;
+}
+
+.repo-button > button > i {
+    font-size: 18px;
+}
+
+nav,
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.repo-text-container {
+    flex-direction: column;
+    word-break: break-word;
+}
+
+.topic {
+    background-color: var(--light-grey);
+    font-size: var(--font-smallest);
+    padding-inline: 8px;
+    padding-block: 5px;
+    margin: 2px;
+    border-radius: 20px;
+    word-break: break-word;
+    height: fit-content;
+}

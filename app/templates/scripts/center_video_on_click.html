@@ -1,0 +1,58 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!isMobile()){
+            // let videos = Array.from(document.getElementsByClassName('desktop-video'));
+            let videos = Array.from(document.querySelectorAll('video'));
+            let iframes = Array.from(document.querySelectorAll('iframe'));
+            videos = [...videos, ...iframes];
+            
+            videos.forEach(function(video) {
+                // Listen for clicks INSIDE video 
+                video.addEventListener('click', function() {
+                    // Add 'clicked' class (which will zoom & center video)
+                    this.classList.toggle('clicked');
+                    // Pause other videos 
+                    pauseOtherVideos(videos, currentVideo);
+                    // Remove 'clicked' class & pause other videos
+                    videos.forEach(function(otherVideo) {
+                        if (otherVideo !== video) {
+                            otherVideo.classList.remove('clicked');
+                        }
+                    });
+                });
+            });
+
+            // Listen for clicks OUTSIDE of the video 
+            document.addEventListener('click', function(event) {
+                videos.forEach(function(video) {
+                    const isClickedInsideVideo = video.contains(event.target);
+                    if (!isClickedInsideVideo) {
+                        video.classList.remove('clicked');
+                        pauseAllVideos(videos)
+                    }
+                });
+            });
+        }
+
+        function isMobile() {
+            return window.matchMedia("(max-width: 770px)").matches;
+        }
+
+        function pauseOtherVideos(videos, currentVideo) {
+            videos.forEach(video => {
+                if (video !== currentVideo){
+                    pauseVideo(video)
+                }
+            });
+        }
+
+        function pauseAllVideos(videos) {
+            videos.forEach(video => pauseVideo(video));
+        }
+
+        function pauseVideo(video){
+            if (!video.paused) video.pause()
+        };
+
+    });
+</script>

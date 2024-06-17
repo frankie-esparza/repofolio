@@ -1,0 +1,15 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let videos = Array.from(document.getElementsByClassName('desktop-video'));
+        videos.forEach(video => {
+            video.controls = false;
+            video.addEventListener('mouseenter', function() {
+                video.controls = true;
+            });
+
+            video.addEventListener('mouseleave', function() {
+                video.controls = false;
+            });
+        })
+    })
+</script>
