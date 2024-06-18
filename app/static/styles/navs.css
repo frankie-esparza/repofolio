@@ -14,10 +14,14 @@ nav > ul {
     margin: 0px;
 }
 
+.dropdown-button,
 .navlink {
     font-size: var(--font-large);
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.navlink {
     padding: 0px;
     margin: 0px;
 }

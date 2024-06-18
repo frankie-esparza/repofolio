@@ -32,7 +32,11 @@ DEFAULT_VARS = {
 
 @bp.route('/')
 def index():
-    return render_template("home.html", **DEFAULT_VARS)
+    # create Filter Repos form
+    form = FilterReposForm()
+    get_form_choices(form)
+
+    return render_template("home.html", form=form, **DEFAULT_VARS)
 
 
 @bp.route('/highlights')
