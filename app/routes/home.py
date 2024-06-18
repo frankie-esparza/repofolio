@@ -38,6 +38,14 @@ def highlights():
     repos = get_highlighted_repos_from_db()
     return render_template("highlights.html", repos=repos, **DEFAULT_VARS)
 
+#   form = CreateOrderForm()
+#     getFormChoices(form)
+#     if form.validate_on_submit(): 
+#         handleCreateOrder(form)
+#         return redirect(url_for("orders.index"))
+#     return render_template("forms/form.html", form=form, path=url_for('orders.createOrder'), title='Create Order',)
+
+
 
 @bp.route('/more')
 @bp.route('/more/', methods=["GET", "POST"])
@@ -50,19 +58,19 @@ def more():
     else:
         # get topics to filter by from query parameters
         topics = request.args.getlist('topic')
-        print('TOPICS', topics)
         if len(topics) > 0:
             repos = get_repos_from_db_filtered_by_topics(topics)
         # if there are no filters, just get repos from db
         else: 
             repos = get_repos_from_db()
 
-    # handle submission of Filter Repos form
+    # create Filter Repos form
     form = FilterReposForm()
     get_form_choices(form)
-    if form.validate_on_submit(): 
+
+    if form.validate_on_submit():
         route = get_route_from_filters(form.filters.data)
-        return render_template('more.html', repos=repos, form=form, path=route, **DEFAULT_VARS)
+        return redirect(route)
 
     # otherwise, just render all the repos
     return render_template('more.html', repos=repos, form=form, path=url_for('home.more'), **DEFAULT_VARS)
@@ -95,5 +103,3 @@ def get_form_choices(form):
         if (type == 'SelectMultipleField'):
             options = FILTERS.items()
             form[field].choices = [(value, key) for (key, value) in options]
-            print('CHOICES', form[field].choices)
-            print('CHOICES', form[field].choices[0][0])

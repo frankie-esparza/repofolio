@@ -7,7 +7,7 @@ option {
 }
 
 .select-multiple-field{
-    height: 75px;
+    height: 90px;
     width: fit-content;
     border: 2px solid var(--light-grey);
     border-radius: var(--border-radius-buttons);
