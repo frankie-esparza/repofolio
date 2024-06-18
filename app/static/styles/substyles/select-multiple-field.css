@@ -1,5 +1,11 @@
 @import url('../variables.css');
 
+option {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+
 .select-multiple-field{
     height: 75px;
     width: fit-content;
@@ -19,6 +25,11 @@
 .select-multiple-field option:checked {
     background-color: var(--light-grey);
 }
+
+.select-multiple-field > option:focus {
+    background-color: none;
+}
+
 
 #submit {
     background-color: var(--light-grey);

@@ -51,7 +51,7 @@ PROJECTS_WITHOUT_REPOS = [
             Designed curriculum and hands-on workshops empowering students to bring their ideas to life 
             using the design process, code, electronics, 3D printing, and CAD modeling
         ''',
-        'video_filename': '/streetcode.mp4',
+        'video_filename': 'streetcode.mp4',
         'thumbnail_filepath': '/thumbnails/streetcode.png',
          'priority': 5,
          'highlighted': True
