@@ -1,5 +1,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // If user isn't on mobile, add click event listeners to all videos
         if (!isMobile()) {
             let videos = Array.from(document.querySelectorAll('video'));
     

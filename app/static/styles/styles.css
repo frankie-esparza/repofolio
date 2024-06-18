@@ -1,15 +1,15 @@
 /* Variables must be first */
 @import url('variables.css');
 
-@import url('substyles/effects.css');
-@import url('substyles/global.css');
-@import url('substyles/icons.css');
-@import url('substyles/images.css');
-@import url('substyles/navs.css');
-@import url('substyles/select-multiple-field.css');
-@import url('substyles/tooltips.css');
-@import url('substyles/typography.css');
-@import url('substyles/videos.css');
+@import url('effects.css');
+@import url('global.css');
+@import url('icons.css');
+@import url('images.css');
+@import url('navs.css');
+@import url('select-multiple-field.css');
+@import url('tooltips.css');
+@import url('typography.css');
+@import url('videos.css');
 @import url('classes.css');
 @import url('variables.css');
 @import url('ids.css');

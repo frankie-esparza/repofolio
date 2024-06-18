@@ -7,7 +7,7 @@ PROJECTS_WITHOUT_REPOS = [
             now used in farms that use 90% less water and 1% of the land compared to conventional farms.
         ''',
         'video_filename': 'plenty-lights.mp4',
-        'thumbnail_filepath': '/thumbnails/plenty-lights.png',
+        'thumbnail_filename': 'plenty-lights.png',
         'priority': 2,
         'highlighted': True,
     },
@@ -22,7 +22,7 @@ PROJECTS_WITHOUT_REPOS = [
             'matlab'
         ],
         'video_filename': 'plenty-heatsinks.mp4',
-        'thumbnail_filepath': '/thumbnails/plenty-heatsinks.png',
+        'thumbnail_filename': 'plenty-heatsinks.png',
         'language': 'matlab',   
         'priority': 3,
         'highlighted': True
@@ -39,7 +39,7 @@ PROJECTS_WITHOUT_REPOS = [
         ],
         'language': 'python',
         'video_filename': 'neuralink.mp4',
-        'thumbnail_filepath': '/thumbnails/neuralink.png',
+        'thumbnail_filename': 'neuralink.png',
         'priority': 4,
         'highlighted': True
 
@@ -52,7 +52,7 @@ PROJECTS_WITHOUT_REPOS = [
             using the design process, code, electronics, 3D printing, and CAD modeling
         ''',
         'video_filename': 'streetcode.mp4',
-        'thumbnail_filepath': '/thumbnails/streetcode.png',
+        'thumbnail_filename': 'streetcode.png',
          'priority': 5,
          'highlighted': True
     },

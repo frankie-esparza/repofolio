@@ -6,7 +6,7 @@ PROPS_NOT_IN_GITHUB_RESPONSE = [
     'priority',
     'highlighted',
     'video_filename',
-    'thumbnail_filepath'
+    'thumbnail_filename'
 ]
 
 db = SQLAlchemy()
@@ -34,5 +34,5 @@ class Repo(db.Model):
     priority = db.Column(db.Integer, nullable=True)
     highlighted = db.Column(db.Boolean, nullable=True)
     video_filename = db.Column(db.String(100), nullable=True) # route for the static video
-    thumbnail_filepath = db.Column(db.String(100), nullable=True) # route for the static thumbnail image
+    thumbnail_filename = db.Column(db.String(100), nullable=True) # route for the static thumbnail image
 

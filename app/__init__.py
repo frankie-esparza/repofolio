@@ -13,6 +13,6 @@ app.config.from_object(Configuration)
 app.register_blueprint(home.bp)
 
 # Wrap app in a whitenoise object for serving static assets
-app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
+app.wsgi_app = WhiteNoise(app.wsgi_app, root="/static/")
 
 db.init_app(app)
