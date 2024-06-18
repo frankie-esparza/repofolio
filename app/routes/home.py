@@ -50,6 +50,7 @@ def more():
     else:
         # get topics to filter by from query parameters
         topics = request.args.getlist('topic')
+        print('TOPICS', topics)
         if len(topics) > 0:
             repos = get_repos_from_db_filtered_by_topics(topics)
         # if there are no filters, just get repos from db
@@ -58,15 +59,13 @@ def more():
 
     # handle submission of Filter Repos form
     form = FilterReposForm()
-    getFormChoices(form)
+    get_form_choices(form)
     if form.validate_on_submit(): 
-        filters = form.filters.data
-        print('FILTERS', filters)
-        route = '/more?' + ('&').join(f'topic={filter}' for filter in filters )
-        return redirect(route)
+        route = get_route_from_filters(form.filters.data)
+        return render_template('more.html', repos=repos, form=form, path=route, **DEFAULT_VARS)
 
     # otherwise, just render all the repos
-    return render_template('more.html', repos= repos, form=form, path=url_for('home.more'), **DEFAULT_VARS)
+    return render_template('more.html', repos=repos, form=form, path=url_for('home.more'), **DEFAULT_VARS)
 
 
 @bp.route('/refresh')
@@ -82,10 +81,19 @@ def page_not_found(error):
     return render_template('error.html', title=f'Error', error=error)
 
 
-def getFormChoices(form):
+def get_route_from_filters(filters):
+    if (filters[0] == ''):
+        return '/more'
+    else: 
+        return'/more?' + ('&').join(f'topic={filter}' for filter in filters )
+
+
+def get_form_choices(form):
     for field in form._fields.keys():
         field = form[field].name
         type = form[field].type
         if (type == 'SelectMultipleField'):
             options = FILTERS.items()
             form[field].choices = [(value, key) for (key, value) in options]
+            print('CHOICES', form[field].choices)
+            print('CHOICES', form[field].choices[0][0])

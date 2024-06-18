@@ -34,6 +34,7 @@ HEADER_ICON_BUTTONS = [
 ]
 
 FILTERS = {
+    'All': '',
     'Full-stack': 'postgresql',
     'React' : 'react',
     'Python': 'flask',
