@@ -34,6 +34,7 @@
     --video-height-mobile: 45vw;
 
     --video-width-on-click: 60vw;
+    --video-width-on-click-mobile: 90vw;
     --video-move-to-center-speed: 0.5s;
 
     --max-z-index: 1000;

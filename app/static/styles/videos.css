@@ -1,7 +1,7 @@
 @import url('variables.css');
 
 .video-container {
-    position: relative; /* Ensure relative positioning for absolute positioning */
+    position: relative;
 }
 
 .desktop-video,
@@ -12,23 +12,22 @@
 }
 
 .desktop-video{
-    transition: z-index 0s, transform 0.5s ease, width 0.5s ease; /* Smooth transition */
-    z-index: 1; /* Set base z-index */
-    position: absolute; /* Ensure absolute positioning for proper stacking */
-    top: 50%; /* Position at the top left of container */
+    transition: z-index 0s, transform 0.5s ease, width 0.5s ease;
+    z-index: 1; 
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* On click, increase z-index and width */
 .desktop-video.clicked {
-    z-index: var(--max-z-index); /* Higher z-index to be on top */
+    z-index: var(--max-z-index);
     width: var(--video-width-on-click); 
     height: auto;
-    top: 60%; /* Center vertically */
-    left: 50%; /* Center horizontally */
+    top: 60%; 
+    left: 50%; 
     transform: translate(-50%, -50%);
-    position: fixed; /* Set to fixed positioning */
+    position: fixed; 
 }
 
 .highlights-video {
