@@ -2,22 +2,10 @@
     <div class="video-container">
         <video 
         class="desktop-video" 
-        type="video/mp4"
-        >Your browser does not support the video tag.
-        </video>
-
-        {% if repo.thumbnail_filepath is not  none %}
-        <video 
-            class="desktop-video"
-            controls 
-            poster="{{ url_for('static', filename=repo.thumbnail_filepath ) }}">
-        {% else %}
-        <video 
-            class="desktop-video"   
-            controls>
-        {% endif %}
-        <source src="https://storage.googleapis.com/{{ GOOGLE_CLOUD_CONSOLE_BUCKET_NAME }}/{{ repo.video_filename }}" type="video/mp4">
-        Your browser does not support the video tag.
+        controls 
+        poster="{{ url_for('static', filename=repo.thumbnail_filepath) }}">
+            <source src="https://storage.googleapis.com/{{ GOOGLE_CLOUD_CONSOLE_BUCKET_NAME }}/{{ repo.video_filename }}" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
 </div>

@@ -1,58 +1,76 @@
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (!isMobile()){
-            // let videos = Array.from(document.getElementsByClassName('desktop-video'));
-            let videos = Array.from(document.querySelectorAll('video'));
-            let iframes = Array.from(document.querySelectorAll('iframe'));
-            videos = [...videos, ...iframes];
-            
-            videos.forEach(function(video) {
-                // Listen for clicks INSIDE video 
-                video.addEventListener('click', function() {
-                    // Add 'clicked' class (which will zoom & center video)
-                    this.classList.toggle('clicked');
-                    // Pause other videos 
-                    pauseOtherVideos(videos, currentVideo);
-                    // Remove 'clicked' class & pause other videos
-                    videos.forEach(function(otherVideo) {
-                        if (otherVideo !== video) {
-                            otherVideo.classList.remove('clicked');
-                        }
-                    });
-                });
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    if (!isMobile()) {
+        let videos = Array.from(document.querySelectorAll('video'));
 
-            // Listen for clicks OUTSIDE of the video 
-            document.addEventListener('click', function(event) {
-                videos.forEach(function(video) {
-                    const isClickedInsideVideo = video.contains(event.target);
-                    if (!isClickedInsideVideo) {
-                        video.classList.remove('clicked');
-                        pauseAllVideos(videos)
+        videos.forEach(function(video) {
+            // Function to handle interaction with the video element
+            function handleVideoInteraction(event) {
+                if (event.type === 'click' || (event.type === 'play')) {
+                    video.classList.add('clicked');
+                    pauseOtherVideos(videos, video);
+
+                    // Ensure only one video is clicked at a time
+                    if (video.classList.contains('clicked')) {
+                        videos.forEach(function(otherVideo) {
+                            if (otherVideo !== video) {
+                                otherVideo.classList.remove('clicked');
+                            }
+                        });
                     }
-                });
-            });
-        }
+                }
+            }
 
-        function isMobile() {
-            return window.matchMedia("(max-width: 770px)").matches;
-        }
+            // Listen for clicks on the video
+            video.addEventListener('click', handleVideoInteraction);
 
-        function pauseOtherVideos(videos, currentVideo) {
-            videos.forEach(video => {
-                if (video !== currentVideo){
-                    pauseVideo(video)
+            // Listen for play events on the video
+            video.addEventListener('play', handleVideoInteraction);
+        });
+
+        // Listen for clicks OUTSIDE of the video
+        document.addEventListener('click', function(event) {
+            videos.forEach(function(video) {
+                const isClickedInsideVideo = video.contains(event.target);
+                if (!isClickedInsideVideo) {
+                    video.classList.remove('clicked');
+                    video.poster = video.getAttribute('poster');
+                    stopVideo(video);
                 }
             });
-        }
+        });
 
-        function pauseAllVideos(videos) {
-            videos.forEach(video => pauseVideo(video));
-        }
+        // Listen for Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                videos.forEach(function(video) {
+                    video.classList.remove('clicked');
+                    video.poster = video.getAttribute('poster');
+                    stopVideo(video);
+                });
+            }
+        });
+    }
 
-        function pauseVideo(video){
-            if (!video.paused) video.pause()
-        };
+    function isMobile() {
+        return window.matchMedia("(max-width: 770px)").matches;
+    }
 
-    });
+    function pauseOtherVideos(videos, currentVideo) {
+        videos.forEach(video => {
+            if (video !== currentVideo) {
+                pauseVideo(video);
+            }
+        });
+    }
+
+    function pauseVideo(video) {
+        video.pause();
+    }
+
+    function stopVideo(video) {
+        video.currentTime = 0;
+        video.pause();
+    }
+});
 </script>
