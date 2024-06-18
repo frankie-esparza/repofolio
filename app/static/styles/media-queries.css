@@ -99,4 +99,8 @@
     .social-nav-mobile {
         display: flex;
     }
+
+    .desktop-video.clicked {
+        width: var(--video-width-on-click-mobile); 
+    }
 }
