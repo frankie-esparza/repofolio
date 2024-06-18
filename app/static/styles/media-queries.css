@@ -1,4 +1,4 @@
-@import url('../variables.css');
+@import url('variables.css');
 
 @media only screen and (max-width: 1448px) {
     .social-nav {
@@ -82,20 +82,12 @@
         margin-top: var(--header-height-mobile);
     }
 
-    .desktop-title {
-        display: none;
-    }
-
     .icon-button {
         padding: 0px;
     }
 
     i {
         font-size: 25px;
-    }
-
-    .mobile-title {
-        display: flex;
     }
 
     .social-nav-desktop {
