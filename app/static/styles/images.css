@@ -1,4 +1,4 @@
-@import url('../variables.css');
+@import url('variables.css');
 
 #profile-pic {
     width: var(--profile-pic-size);

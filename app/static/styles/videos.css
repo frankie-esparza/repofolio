@@ -1,4 +1,4 @@
-@import url('../variables.css');
+@import url('variables.css');
 
 .video-container {
     position: relative; /* Ensure relative positioning for absolute positioning */
