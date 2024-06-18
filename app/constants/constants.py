@@ -3,6 +3,8 @@ FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER = SECONDS_PER_DAY
 MAX_REPOS_IN_GET_QUERY = 50
 GITHUB_USERNAME = 'frankie-engineer'
 GOOGLE_CLOUD_CONSOLE_BUCKET_NAME = 'frankie-esparza-portfolio'
+RESUME_FILENAME = 'resume.pdf'
+RESUME_BUTTON_NAME = 'Download Resume'
 
 PAGES = { 
     'Home': '/',
@@ -22,8 +24,8 @@ HEADER_ICON_BUTTONS = [
         'icon': 'fa-brands fa-github'
     },
     {
-        'name': 'Download Resume',
-        'url': '',
+        'name': f'{RESUME_BUTTON_NAME}',
+        'url': f'https://storage.googleapis.com/{GOOGLE_CLOUD_CONSOLE_BUCKET_NAME}/documents/{RESUME_FILENAME}',
         'icon': 'fa-regular fa-file'
     },
     {

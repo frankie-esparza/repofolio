@@ -1,6 +1,6 @@
 <nav class="social-nav">
     {% for nav in HEADER_ICON_BUTTONS %}
-    {% if nav.name == 'resume' %}
+    {% if nav.name == RESUME_BUTTON_NAME %}
         <a class="navlink" href="{{ nav.url }}" download>
             {% include "/components/buttons/icon.html" %}
         </a>

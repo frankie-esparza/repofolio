@@ -1,9 +1,10 @@
 from app.constants.constants import (
     FILTERS,
-    PAGES, 
+    FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER,
+    RESUME_BUTTON_NAME,
     GOOGLE_CLOUD_CONSOLE_BUCKET_NAME,
     HEADER_ICON_BUTTONS,
-    FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER
+    PAGES, 
 )
 from flask import (
     Flask, Blueprint, make_response, request, 
@@ -24,6 +25,7 @@ app = Flask(__name__)
 DEFAULT_VARS = {
     'GOOGLE_CLOUD_CONSOLE_BUCKET_NAME': GOOGLE_CLOUD_CONSOLE_BUCKET_NAME,
     'HEADER_ICON_BUTTONS': HEADER_ICON_BUTTONS,
+    'RESUME_BUTTON_NAME': RESUME_BUTTON_NAME,
     'PAGES': PAGES, 
     'request': request
 }
@@ -37,15 +39,6 @@ def index():
 def highlights():
     repos = get_highlighted_repos_from_db()
     return render_template("highlights.html", repos=repos, **DEFAULT_VARS)
-
-#   form = CreateOrderForm()
-#     getFormChoices(form)
-#     if form.validate_on_submit(): 
-#         handleCreateOrder(form)
-#         return redirect(url_for("orders.index"))
-#     return render_template("forms/form.html", form=form, path=url_for('orders.createOrder'), title='Create Order',)
-
-
 
 @bp.route('/more')
 @bp.route('/more/', methods=["GET", "POST"])

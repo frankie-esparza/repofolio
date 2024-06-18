@@ -23,19 +23,12 @@
 /* On click, increase z-index and width */
 .desktop-video.clicked {
     z-index: var(--max-z-index); /* Higher z-index to be on top */
-    width: var(--video-width-on-click); /* 50% of viewport width */
-    height: auto; /* Maintain aspect ratio */
+    width: var(--video-width-on-click); 
+    height: auto;
     top: 60%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
     position: fixed; /* Set to fixed positioning */
-}
-
-.mobile-video {
-    padding: 40px;
-    width: 15vw;
-    height: auto;
-    display: flex;
 }
 
 .highlights-video {
