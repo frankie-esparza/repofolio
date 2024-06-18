@@ -80,7 +80,6 @@ def add_repos_to_db(repos):
 
 def update_repo(repo_name, new_props):
     repo = get_repo_by_name(repo_name)
-    print('REPO', repo)
     for key, value in new_props.items():
          setattr(repo, key, value)
     db.session.commit()
@@ -117,5 +116,4 @@ def filter_out_unused_props_from_github(repos):
 def get_github_keys(model):
     model_props = [column.name for column in model.__table__.columns]
     github_props = list(filter(lambda key: key not in PROPS_NOT_IN_GITHUB_RESPONSE, model_props))
-    print('GITHUB KEYS', github_props)
     return github_props

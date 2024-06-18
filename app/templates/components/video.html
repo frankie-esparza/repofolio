@@ -3,8 +3,10 @@
         <video 
         class="desktop-video" 
         controls 
-        poster="{{ url_for('static', filename=repo.thumbnail_filepath) }}">
-            <source src="https://storage.googleapis.com/{{ GOOGLE_CLOUD_CONSOLE_BUCKET_NAME }}/{{ repo.video_filename }}" type="video/mp4">
+        poster="https://storage.googleapis.com/{{ GOOGLE_CLOUD_CONSOLE_BUCKET_NAME }}/thumbnails/{{ repo.thumbnail_filename }}">
+            <source 
+            src="https://storage.googleapis.com/{{ GOOGLE_CLOUD_CONSOLE_BUCKET_NAME }}/videos/{{ repo.video_filename }}" 
+            type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
