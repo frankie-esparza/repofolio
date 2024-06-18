@@ -18,7 +18,8 @@
     --font-small: 16;
     --font-smallest: 14;
 
-    --border-radius-buttons: 10px;
+    --border-radius-dropdown: 15px;
+    --border-radius-buttons: 20px;
     --border-radius-thumbnails: 25px;
 
     --header-height: 280px;

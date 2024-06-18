@@ -1,5 +1,7 @@
 @import url('variables.css');
 
+option:hover,
+.dropdown-button:hover,
 #submit:hover,
 a:hover,
 a > strong:hover {
