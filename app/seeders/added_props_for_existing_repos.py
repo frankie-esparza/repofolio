@@ -16,5 +16,17 @@ ADDED_PROPS_FOR_EXISTING_REPOS = {
         'thumbnail_filename': 'ube.png',
         'priority': 7,
         'highlighted': False
+    },
+    'yuca': {
+        'video_filename': 'yuca.mp4',
+        'thumbnail_filename': 'yuca.png',
+        'priority': 8,
+        'highlighted': False
+    },
+     'crayons': {
+        'video_filename': 'crayons.mp4',
+        'thumbnail_filename': 'crayons.png',
+        'priority': 9,
+        'highlighted': False
     }
 }
