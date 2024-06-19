@@ -1,0 +1,89 @@
+# 🎥 Repofolio
+A library for auto-generating a dynamic portfolio from your Github, equipped with repo filtering, prioritization, & demo video properties. 
+
+## Features 
+Once you've created your portfolio website using the Repofolio library, you'll enjoy the following features: 
+- 🪄 Your portfolio website will auto-update whenever you update a repo's name, description, homepage, or [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
+- ⏳ Viewers of your website will be able to easily filter repos to find what their interested in (e.g. show me all repos related to 'React')
+- ⭐️ You can **highlight** and set the **priority** of repos so they always show up in a certain order on your page
+- 🎥 You can optionally associate a **video** & **thumbnail** with each repo
+- 🔧 You can optionally add **projects without repos** (e.g. you're not allowed to share the code or you had another career in a past life that wasn't software)
+<br></br>
+
+<img src="https://storage.googleapis.com/frankie-esparza-portfolio/screenshots/repofolio-1.png" width="500">
+<br></br>
+
+<img src="https://storage.googleapis.com/frankie-esparza-portfolio/screenshots/repofolio-2.png" width="500">
+<br></br>
+
+<img src="https://storage.googleapis.com/frankie-esparza-portfolio/screenshots/repofolio-3.png" width="500">
+<br></br>
+
+
+## Setup 
+### Installation
+1) PostgreSQL
+- **For macs:** download the PostgreSQL app - [HERE](https://postgresapp.com/)
+- **For non-macs:** download PostgresQL - [HERE]( https://www.postgresql.org/download/)  
+
+2) Python 3.12.2 (or later) - [HERE](https://www.python.org/downloads/)
+
+3) Pipenv ```pip install pipenv```    
+
+4) Create a Virtual Environment (replace <<version_name>> with version of python you installed above) -  
+```pipenv install --python "$PYENV_ROOT/versions/3.12.2/bin/python"```
+
+5) Install all the dependencies for the Python App `npm install`
+
+6) Create .env file 
+```
+FLASK_ENV=development
+SECRET_KEY=<insert-secret-key-here>
+DATABASE_URL=postgresql://repofolio:<insert-database-password-here>@localhost/repofolio
+```    
+
+7) Create .flaskenv file
+```FLASK_APP=thyme.py```    
+
+
+### Run the App Locally
+1) Create the PostgreSQL database:
+cd into the 'repofolio' directory   
+```psql```    
+```DROP DATABASE repofolio;```    
+```DROP USER repofolio;```    
+```CREATE USER repofolio WITH PASSWORD '<insert-password-here>';```    
+```CREATE DATABASE repofolio WITH OWNER repofolio;```    
+you should see output showing that the thyme user & database were created
+
+2) Seed the database: 
+```\q``` to exist out of psql
+```python database.py``` to seed the database 
+```psql```
+```SELECT * FROM repos;``` to confirm the data was seeded successfully 
+```\q``` to exit out of psql
+
+3) Start the server: 
+```pipenv run flask run```
+Then click on the link that says something like "Running on http://"...
+
+4) If prompted to log into Github, follow the prompts
+
+### Running the App on a Web Server using Heroku
+1) Create the heroku app 
+2) Create Procfile (with no extension) with contents ```web: gunicorn app:app```
+3) Add "Heroku Postgres" server in heroku as an "add-on"
+4) Make sure "DATABASE_URL" config var (sort of like an env var) matches the DATABASE_URL of the Heroku Postgres Database (click on the database and navigate to settings, Database Credentials ) 
+5) Push the local repofolio database to Heroku
+```heroku pg:push repofolio DATABASE_URL --app <name-of-your-heroku-app>```
+6) For errors use the command: 
+```heroku logs --tail -a <name-of-your-heroku-app>```
+7) Update config file by un-commenting text that adjusts URI so that Heroku can work with Postgres
+
+### Set Your Customizations 
+Go to the `customizations` directory and follow all of the instructions where it says 'TODO':
+1. `added_props_for_existing_repos.py` - optionally add videos, thumbnails, priority rankings, and a highlighted boolean for each repo
+2. `customizable_constants.py` - add your profile_pic, resume, github, linkedin info
+3. `filters.py` - choose which [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) you want your viewers to be able to filter by 
+4. `projects_without_repos.py` - optionally add projects without repos 
+5. In the `templates` folder, find `home.html` and add a summary about yourself
