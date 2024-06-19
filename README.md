@@ -22,28 +22,18 @@ Once you've created your portfolio website using the Repofolio library, you'll e
 
 ## Setup 
 ### Installation
-1) PostgreSQL
-- **For macs:** download the PostgreSQL app - [HERE](https://postgresapp.com/)
-- **For non-macs:** download PostgresQL - [HERE]( https://www.postgresql.org/download/)  
-
-2) Python 3.12.2 (or later) - [HERE](https://www.python.org/downloads/)
-
-3) Pipenv ```pip install pipenv```    
-
-4) Create a Virtual Environment (replace <<version_name>> with version of python you installed above) -  
-```pipenv install --python "$PYENV_ROOT/versions/3.12.2/bin/python"```
-
+1) Install PostgreSQL (for macs install the PostgreSQL app [HERE](https://postgresapp.com/) )
+2) Install Python 
+3) Install Pipenv `pip install pipenv`  
+4) Create a Virtual Environment `pipenv install --python "$PYENV_ROOT/versions/<<version_you_installed_above>>/bin/python"`
 5) Install all the dependencies for the Python App `npm install`
-
 6) Create .env file 
 ```
 FLASK_ENV=development
 SECRET_KEY=<insert-secret-key-here>
 DATABASE_URL=postgresql://repofolio:<insert-database-password-here>@localhost/repofolio
 ```    
-
-7) Create .flaskenv file
-```FLASK_APP=repofolio.py```    
+7) Create .flaskenv file `FLASK_APP=repofolio.py`    
 
 
 ### Run the App Locally
@@ -54,7 +44,7 @@ cd into the 'repofolio' directory
 ```DROP USER repofolio;```    
 ```CREATE USER repofolio WITH PASSWORD '<insert-password-here>';```    
 ```CREATE DATABASE repofolio WITH OWNER repofolio;```    
-you should see output showing that the thyme user & database were created
+you should see output showing that the user & database were created
 
 2) Seed the database: 
 ```\q``` to exist out of psql
@@ -70,9 +60,9 @@ Then click on the link that says something like "Running on http://"...
 4) If prompted to log into Github, follow the prompts
 
 ## Customizations 
-Go to the `customizations` directory and follow all of the instructions where it says 'TODO':
+Go to the `customizations` directory and follow all of the instructions where it says **'TODO'**:
 1. `added_props_for_existing_repos.py` - optionally add videos, thumbnails, priority rankings, and a highlighted boolean for each repo
-2. `customizable_constants.py` - add your profile_pic, resume, github, linkedin info
+2. `customizable_constants.py` - add your profile pic, resume, Github username & LinkedIn username
 3. `filters.py` - choose which [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) you want your viewers to be able to filter by 
 4. `projects_without_repos.py` - optionally add projects without repos 
 5. In the `templates` folder, find `home.html` and add a summary about yourself
