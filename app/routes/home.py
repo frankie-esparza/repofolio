@@ -32,17 +32,17 @@ DEFAULT_VARS = {
 
 @bp.route('/')
 def index():
-    # create Filter Repos form
     form = FilterReposForm()
     get_form_choices(form)
-
     return render_template("home.html", form=form, **DEFAULT_VARS)
 
 
 @bp.route('/highlights')
 def highlights():
+    form = FilterReposForm()
+    get_form_choices(form)
     repos = get_highlighted_repos_from_db()
-    return render_template("highlights.html", repos=repos, **DEFAULT_VARS)
+    return render_template("highlights.html", form=form, repos=repos, **DEFAULT_VARS)
 
 @bp.route('/more')
 @bp.route('/more/', methods=["GET", "POST"])
@@ -61,7 +61,6 @@ def more():
         else: 
             repos = get_repos_from_db()
 
-    # create Filter Repos form
     form = FilterReposForm()
     get_form_choices(form)
 
@@ -83,7 +82,9 @@ def refresh():
 
 @bp.errorhandler(404)
 def page_not_found(error):
-    return render_template('error.html', title=f'Error', error=error)
+    form = FilterReposForm()
+    get_form_choices(form)
+    return render_template('error.html', form=form, title=f'Error', error=error)
 
 
 def get_route_from_filters(filters):

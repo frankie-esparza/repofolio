@@ -4,7 +4,9 @@
 <div class="non-header centered-vertical-container">
     <div class="repos-container">
         {% for repo in repos %}
+        {% if not repo.highlighted %}
         {% include "/components/repo.html" %}
+        {% endif %}
         {% endfor %}
     </div>
 </div>
