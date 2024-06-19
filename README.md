@@ -3,7 +3,7 @@ A library for auto-generating a dynamic portfolio from your Github, equipped wit
 
 ## Features 
 Once you've created your portfolio website using the Repofolio library, you'll enjoy the following features: 
-- 🪄 Your portfolio website will auto-update whenever you update a repo's name, description, homepage, or [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
+- 🪄 Your portfolio website will auto-update when you update a repo's name, description, homepage, or [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) or when you add a new public repo
 - ⏳ Viewers of your website will be able to easily filter repos to find what their interested in (e.g. show me all repos related to 'React')
 - ⭐️ You can **highlight** and set the **priority** of repos so they always show up in a certain order on your page
 - 🎥 You can optionally associate a **video** & **thumbnail** with each repo
