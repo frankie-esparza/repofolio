@@ -12,6 +12,7 @@
 a {
     text-decoration: none;
     font-size: var(--font-medium);
+    font-weight: 400;
 }
 
 form {
