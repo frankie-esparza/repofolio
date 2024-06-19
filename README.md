@@ -43,7 +43,7 @@ DATABASE_URL=postgresql://repofolio:<insert-database-password-here>@localhost/re
 ```    
 
 7) Create .flaskenv file
-```FLASK_APP=thyme.py```    
+```FLASK_APP=repofolio.py```    
 
 
 ### Run the App Locally
@@ -69,18 +69,7 @@ Then click on the link that says something like "Running on http://"...
 
 4) If prompted to log into Github, follow the prompts
 
-### Running the App on a Web Server using Heroku
-1) Create the heroku app 
-2) Create Procfile (with no extension) with contents ```web: gunicorn app:app```
-3) Add "Heroku Postgres" server in heroku as an "add-on"
-4) Make sure "DATABASE_URL" config var (sort of like an env var) matches the DATABASE_URL of the Heroku Postgres Database (click on the database and navigate to settings, Database Credentials ) 
-5) Push the local repofolio database to Heroku
-```heroku pg:push repofolio DATABASE_URL --app <name-of-your-heroku-app>```
-6) For errors use the command: 
-```heroku logs --tail -a <name-of-your-heroku-app>```
-7) Update config file by un-commenting text that adjusts URI so that Heroku can work with Postgres
-
-### Set Your Customizations 
+## Customizations 
 Go to the `customizations` directory and follow all of the instructions where it says 'TODO':
 1. `added_props_for_existing_repos.py` - optionally add videos, thumbnails, priority rankings, and a highlighted boolean for each repo
 2. `customizable_constants.py` - add your profile_pic, resume, github, linkedin info
