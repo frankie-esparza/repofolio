@@ -1,17 +1,28 @@
 from app.constants.constants import (
-    FILTERS,
+    EMAIL_ME_URL,
     FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER,
-    RESUME_BUTTON_NAME,
-    GOOGLE_CLOUD_CONSOLE_BUCKET_NAME,
     HEADER_ICON_BUTTONS,
     PAGES, 
+    RESUME_BUTTON_NAME,
 )
+from app.customizations.customizable_constants import (
+    EMAIL,
+    FAVICON_URL, 
+    GOOGLE_CLOUD_STORAGE_URL_START,
+    NAME,
+    SHORT_NAME,
+    PROFILE_PIC_URL,
+    RESUME_URL,
+)
+from app.customizations.projects_without_repos import PROJECTS_WITHOUT_REPOS
+from app.customizations.added_props_for_existing_repos import ADDED_PROPS_FOR_EXISTING_REPOS
+from app.customizations.filters import FILTERS
+from app.functions.repos import add_repos_to_db, update_repo,get_repos_from_github_and_add_to_db
 from flask import (
     Flask, Blueprint, make_response, request, 
     redirect, render_template, url_for
 )
 from app.functions.repos import (
-    delete_repos_from_db,
     get_repos_from_db, 
     get_repos_from_github_and_add_to_db, 
     get_repos_from_db_filtered_by_topics,
@@ -19,9 +30,6 @@ from app.functions.repos import (
 )
 from app.forms.FilterReposForm import FilterReposForm
 from dotenv import load_dotenv
-from app.functions.repos import add_repos_to_db, update_repo,get_repos_from_github_and_add_to_db
-from app.seeders.projects_without_repos import PROJECTS_WITHOUT_REPOS
-from app.seeders.added_props_for_existing_repos import ADDED_PROPS_FOR_EXISTING_REPOS
 from app import db
 
 load_dotenv()
@@ -30,10 +38,17 @@ bp = Blueprint('home', __name__, url_prefix='/')
 app = Flask(__name__)
 
 DEFAULT_VARS = {
-    'GOOGLE_CLOUD_CONSOLE_BUCKET_NAME': GOOGLE_CLOUD_CONSOLE_BUCKET_NAME,
+    'EMAIL': EMAIL,
+    'EMAIL_ME_URL': EMAIL_ME_URL,
+    'FAVICON_URL': FAVICON_URL,
+    'GOOGLE_CLOUD_STORAGE_URL_START': GOOGLE_CLOUD_STORAGE_URL_START,
     'HEADER_ICON_BUTTONS': HEADER_ICON_BUTTONS,
-    'RESUME_BUTTON_NAME': RESUME_BUTTON_NAME,
+    'NAME': NAME,
+    'SHORT_NAME': SHORT_NAME,
     'PAGES': PAGES, 
+    'PROFILE_PIC_URL': PROFILE_PIC_URL,
+    'RESUME_BUTTON_NAME': RESUME_BUTTON_NAME,
+    'RESUME_URL': RESUME_URL,
     'request': request
 }
 
