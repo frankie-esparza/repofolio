@@ -17,10 +17,16 @@ with app.app_context():
     # get repos from github & add to database
     get_repos_from_github_and_add_to_db()
 
-    # add additional props for existing repos (priority ranking & video links)
+    # add additional props for existing repos
     repo_names = list(ADDED_PROPS_FOR_EXISTING_REPOS.keys())
+
     for repo_name in repo_names:
-        update_repo(repo_name, ADDED_PROPS_FOR_EXISTING_REPOS[repo_name])
+        thumbnail_and_video_filenames = {
+            'thumbnail_filename': f'{repo_name}.png',
+            'video_filename': f'{repo_name}.mp4'
+        }
+        props_to_add = {**thumbnail_and_video_filenames, **ADDED_PROPS_FOR_EXISTING_REPOS[repo_name]}
+        update_repo(repo_name, props_to_add)
 
             
             

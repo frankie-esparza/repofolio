@@ -1,7 +1,13 @@
 <nav>
     <ul>
         {% for key, value in PAGES.items() %}
-        {% if key == 'More' %}
+        <li>
+            <button>
+                <a href="{{ PAGES[key] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
+            </button>
+        </li>
+        {% endfor %}
+        {% if request.path == '/more' %}
         <div class="dropdown">
             <button class="icon-button dropdown-button">
                 <i class="fa-solid fa-bars"></i>
@@ -9,13 +15,7 @@
             <div class="dropdown-content">
                 {% include "/components/form.html" %}
             </div>
-        {% else %}
-        <li>
-            <button>
-                <a href="{{ PAGES[key] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
-            </button>
-        </li>
+        </div>
         {% endif %}
-        {% endfor %}
     </ul>
 </nav>
