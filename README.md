@@ -1,13 +1,14 @@
-# 🎥 Repofolio
-A library for auto-generating a dynamic portfolio from your Github, equipped with repo filtering, prioritization, & demo video properties. 
+# 🍿 Repofolio
+A library that ✨ magically ✨ generates a dynamic portfolio from your Github
 
 ## Features 
-Once you've created your portfolio website using the Repofolio library, you'll enjoy the following features: 
-- 🪄 Your portfolio website will auto-update when you update a repo's name, description, homepage, or [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) or when you add a new public repo
-- ⏳ Viewers of your website will be able to easily filter repos to find what their interested in (e.g. show me all repos related to 'React')
-- ⭐️ You can **highlight** and set the **priority** of repos so they always show up in a certain order on your page
-- 🎥 You can optionally associate a **video** & **thumbnail** with each repo
-- 🔧 You can optionally add **projects without repos** (e.g. you're not allowed to share the code or you had another career in a past life that wasn't software)
+- 🪄 Automatic updates when you add a new public repo
+- 💥 Automatic updates when you change a repo's name, description, or homepage
+- 🔎 Viewers of your website can easily filter through your repos by [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
+- ⭐️ Draw attention to your favorite repos with **Highlights**
+- 🏆 Set the **priority** of repos so your favorties show up first
+- 🎥 Link a **video** & **thumbnail** demo with each repo
+- 🔧 Optionally add **projects without repos** (e.g. non-disclosurable code or careers in a past life that weren't software)
 <br></br>
 
 <img src="https://storage.googleapis.com/frankie-esparza-portfolio/screenshots/repofolio-1.png" width="500">
