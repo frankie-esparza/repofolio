@@ -8,7 +8,7 @@ from app.customizations.customizable_constants import (
     EMAIL,
     FAVICON_URL, 
     FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER,
-    GOOGLE_CLOUD_STORAGE_URL_START,
+    STATIC_FILES_URL_START,
     NAME,
     SHORT_NAME,
     PROFILE_PIC_URL,
@@ -35,7 +35,7 @@ DEFAULT_VARS = {
     'EMAIL_ME_URL': EMAIL_ME_URL,
     'FAVICON_URL': FAVICON_URL,
     'FILTERS': FILTERS,
-    'GOOGLE_CLOUD_STORAGE_URL_START': GOOGLE_CLOUD_STORAGE_URL_START,
+    'STATIC_FILES_URL_START': STATIC_FILES_URL_START,
     'HEADER_ICON_BUTTONS': HEADER_ICON_BUTTONS,
     'NAME': NAME,
     'SHORT_NAME': SHORT_NAME,
@@ -55,7 +55,7 @@ def index():
     if not request.cookies.get('has_visited'):
         update_database()
         response = make_response(redirect(url_for('home.refresh')))
-        response.set_cookie('has_visited', True, max_age=FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER)
+        response.set_cookie('has_visited', 'yes', max_age=FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER)
         return response
     
     # get 'topic' tags from query params

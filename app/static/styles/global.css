@@ -6,7 +6,8 @@
     font-size: var(--font-small);
     color: var(--black);
     background-color: var(--white);
-    list-style-type: none;
+    list-style-type: none;    
+    background-color: transparent;
 }
 
 a {
@@ -22,6 +23,7 @@ header {
     width: 100vw;
     padding-block: 10px;
     padding-top: 40px;
+    background-color: var(--white);
 }
 
 
@@ -36,7 +38,6 @@ html {
     overflow-x: hidden;
 }
 
-#submit,
 button {
     padding: 10px;
     margin: 10px;

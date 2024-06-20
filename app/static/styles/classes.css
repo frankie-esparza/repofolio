@@ -27,6 +27,15 @@ body,
     height: auto;
 }
 
+.non-repo-thumbnail {
+    background-color: var(--light-grey);
+    border-radius: var(--border-radius-thumbnails);
+}
+
+.repo-name {
+    font-family: "Poppins";
+}
+
 .repos-container {
     display: flex;
     flex-wrap: wrap;

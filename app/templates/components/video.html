@@ -3,9 +3,9 @@
         <video 
         class="desktop-video" 
         controls 
-        poster="{{ GOOGLE_CLOUD_STORAGE_URL_START }}/thumbnails/{{ repo.thumbnail_filename }}">
+        poster="{{ STATIC_FILES_URL_START }}/thumbnails/{{ repo.thumbnail_filename }}">
             <source 
-            src="{{ GOOGLE_CLOUD_STORAGE_URL_START }}/videos/{{ repo.video_filename }}" 
+            src="{{ STATIC_FILES_URL_START }}/videos/{{ repo.video_filename }}" 
             type="video/mp4">
             Your browser does not support the video tag.
         </video>
