@@ -12,6 +12,9 @@
 # - put all your videos on YouTube and use the YouTube URL
 # - put the rest of the files (resume, images) in static folder
 # --------------------------------------------------------------------
+SECONDS_PER_DAY = 60*60*24
+FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER = SECONDS_PER_DAY # frequency that repofolio will re-GET repos from Github & database
+MAX_REPOS_IN_GET_QUERY = 50 # make this number bigger than total repos you want to get from Github
 GOOGLE_CLOUD_STORAGE_BUCKET_NAME = 'frankie-esparza-portfolio'
 GOOGLE_CLOUD_STORAGE_URL_START = f'https://storage.googleapis.com/{GOOGLE_CLOUD_STORAGE_BUCKET_NAME}'
 

@@ -26,6 +26,11 @@ nav > ul {
     margin: 0px;
 }
 
+.page-navlink {
+    margin-inline: 10px;
+    margin-block: 20px;
+}
+
 .social-nav {
     margin: 0px;
     padding: 0px;

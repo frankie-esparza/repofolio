@@ -1,21 +1,20 @@
 <nav>
     <ul>
         {% for key, value in PAGES.items() %}
+        {% if key == 'More' %}
         <li>
-            <button>
-                <a href="{{ PAGES[key] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
-            </button>
-        </li>
-        {% endfor %}
-        {% if request.path == '/more' %}
-        <div class="dropdown">
-            <button class="icon-button dropdown-button">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="dropdown-content">
-                {% include "/components/form.html" %}
+            <div class="dropdown">
+                <a class="navlink page-navlink dropdown">{{ key }}</a>
+                <div class="dropdown-content">
+                    {% include "/components/form.html" %}
+                </div>
             </div>
-        </div>
+        </li>
+        {% else %}
+        <li>
+            <a href="{{ PAGES[key] }}" class="navlink page-navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
+        </li>
         {% endif %}
+        {% endfor %}
     </ul>
 </nav>

@@ -1,13 +1,10 @@
-from app.constants.constants import GITHUB_USERNAME, MAX_REPOS_IN_GET_QUERY
+from app.customizations.customizable_constants import GITHUB_USERNAME, MAX_REPOS_IN_GET_QUERY
 from app.models import PROPS_NOT_IN_GITHUB_RESPONSE
 from app.models import db, Repo
-from dotenv import load_dotenv
+from sqlalchemy import or_
 import requests
 import json 
 import os 
-
-load_dotenv()
-
 
 def get_repos_from_db():
     return (
@@ -17,33 +14,46 @@ def get_repos_from_db():
         ).scalars().all()
     )
 
+
+def get_highlighted_repos_from_db():
+    return (
+         db.session.execute(
+            db.select(Repo).filter_by(highlighted=True)
+            .order_by(Repo.priority)
+        ).scalars()
+    )
+
+
+def get_repos_from_db_filtered_by_topics(topics):
+    return (
+        db.session.execute(
+            db.select(Repo)
+             .filter(Repo.topics.overlap(topics))
+            .filter(or_(Repo.highlighted == False, Repo.highlighted == None))
+            .order_by(Repo.priority)
+        ).scalars()
+    )
+
+
 def get_repos_from_github_and_add_to_db():
     repos = get_repos_from_github()
     repos_filtered = filter_out_unused_props_from_github(repos)
     add_repos_to_db(repos_filtered)
 
 
-def get_highlighted_repos_from_db():
-    res = (
-         db.session.execute(
-            db.select(Repo).filter_by(highlighted=True)
-            .order_by(Repo.priority)
-        ).scalars()
-    )
-    return res
-
-
-def get_repos_from_db_filtered_by_topics(topics):
-    res = (
-        db.session.query(Repo)
-        .filter(Repo.topics.overlap(topics))
-        .order_by(Repo.priority)
-    )
-    return res
-
 # ----------------------
 # HELPERS
 # ----------------------
+def add_repos_to_db(repos):
+    for repo in repos:
+        repo_in_database = get_repo_by_name(repo['name'])
+        if not repo_in_database:
+            new_repo = Repo(**repo)
+            db.session.add(new_repo)
+            db.session.commit()
+    print('✅ Added repos to db')
+
+
 def delete_repos_from_db(repos):
     for repo in repos:
         repo = get_repo_by_id(repo.id)
@@ -67,26 +77,17 @@ def get_repo_by_name(name):
         ).scalar_one_or_none()
     )
 
-
-def add_repos_to_db(repos):
-    for repo in repos:
-        repo_in_database = get_repo_by_name(repo['name'])
-        if not repo_in_database:
-            new_repo = Repo(**repo)
-            db.session.add(new_repo)
-            db.session.commit()
-    print('✅ Added repos to db')
-
-
 def update_repo(repo_name, new_props):
     repo = get_repo_by_name(repo_name)
     for key, value in new_props.items():
          setattr(repo, key, value)
     db.session.commit()
 
-
+# -------------------
+# GITHUB API
+# -------------------
 def get_repos_from_github():
-    token = os.getenv('GITHUB_ACESS_TOKEN')
+    token = os.getenv('GITHUB_ACCESS_TOKEN')
     url = f'https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page={MAX_REPOS_IN_GET_QUERY}'
     header =  { 'Authorization': f'Bearer {token}' }
     try:
@@ -108,8 +109,7 @@ def filter_out_unused_props_from_github(repos):
         values = map(lambda key: repo[key], keys)
         new_repo = dict(zip(keys, values))
         filtered_repos.append(new_repo)
-
-    print('✅ Filtered ununsed props from github')
+    print('✅ Filtered unused props from github')
     return filtered_repos
 
 

@@ -1,0 +1,23 @@
+<header>
+    <div id="title-and-social-nav" class="centered-horizontal-container">
+        <div class="title-and-social-nav-column">
+        </div>
+        <div class="title-and-social-nav-column">
+            <h1 id="desktop-title">{{ NAME }}</h1>
+            <h1 id="mobile-title">{{ SHORT_NAME }}</h1>
+        </div>
+        <div class="title-and-social-nav-column">
+            <div class="social-nav-desktop">
+                {% include "/components/navs/social.html" %}
+            </div>
+        </div>
+    </div>
+    
+    {% include "/components/navs/pages.html" %}
+    
+    <div class="social-nav-mobile">
+        {% include "/components/navs/social.html" %}
+    </div>
+</header>
+
+
