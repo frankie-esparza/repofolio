@@ -14,6 +14,7 @@ from app.customizations.customizable_constants import (
     PROFILE_PIC_URL,
     RESUME_URL,
 )
+from app.customizations.filters import FILTERS
 from flask import (
     Flask, Blueprint, make_response, request, 
     redirect, render_template, url_for
@@ -23,7 +24,6 @@ from app.functions.repos import (
     get_repos_from_db_filtered_by_topics,
     get_highlighted_repos_from_db
 )
-from app.functions.forms import create_new_form
 from app.functions.database import update_database
 
 bp = Blueprint('home', __name__, url_prefix='/')
@@ -34,6 +34,7 @@ DEFAULT_VARS = {
     'EMAIL': EMAIL,
     'EMAIL_ME_URL': EMAIL_ME_URL,
     'FAVICON_URL': FAVICON_URL,
+    'FILTERS': FILTERS,
     'GOOGLE_CLOUD_STORAGE_URL_START': GOOGLE_CLOUD_STORAGE_URL_START,
     'HEADER_ICON_BUTTONS': HEADER_ICON_BUTTONS,
     'NAME': NAME,
@@ -60,18 +61,11 @@ def index():
     # get 'topic' tags from query params
     topics = request.args.getlist('topic')
     repos = get_repos(topics, request.path)
-    form = create_new_form()
-
-    # if user submits the topic filters form, redirect to show only repos they filtered for 
-    if form.validate_on_submit():
-        return redirect(get_route(form.filters.data))
     
-    # if the filter form was not submitted & route is '/', render the home template 
     if request.path == '/':
-        return render_template('home.html', repos=repos, form=form, path=url_for('home.index'), **DEFAULT_VARS)
-    # otherwise, render the repos template
+        return render_template('home.html', repos=repos, path=url_for('home.index'), **DEFAULT_VARS)
     else:
-        return render_template('repos.html', repos=repos, form=form, path=url_for('home.index'), **DEFAULT_VARS)
+        return render_template('repos.html', repos=repos, path=url_for('home.index'), **DEFAULT_VARS)
 
 
 @bp.route('/refresh')
@@ -82,8 +76,7 @@ def refresh():
 
 @bp.errorhandler(404)
 def page_not_found(error):
-    form = create_new_form()
-    return render_template('error.html', form=form, title=f'Error', error=error)
+    return render_template('error.html', title=f'Error', error=error)
 
 
 # --------------
