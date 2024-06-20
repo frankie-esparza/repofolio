@@ -1,9 +1,9 @@
 <nav>
     <ul>
-        {% for key, value in navlinks.items() %}
+        {% for filter in FILTERS %}
         <li>
             <button>
-                <a href="{{ navlinks[key] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ key }}</a>
+                <a href="/more?topic={{ FILTERS[filter] }}" class="navlink {% if request.path == value %}active{% endif %}">{{ filter }}</a>
             </button>
         </li>
         {% endfor %}

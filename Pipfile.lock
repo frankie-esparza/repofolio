@@ -520,15 +520,6 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==6.6.0"
-        },
-        "wtforms": {
-            "hashes": [
-                "sha256:bf831c042829c8cdbad74c27575098d541d039b1faa74c771545ecac916f2c07",
-                "sha256:f8d76180d7239c94c6322f7990ae1216dae3659b7aa1cee94b6318bdffb474b9"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==3.1.2"
         }
     },
     "develop": {}

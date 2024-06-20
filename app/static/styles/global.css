@@ -15,10 +15,6 @@ a {
     font-weight: 400;
 }
 
-form {
-    width: fit-content;
-}
-
 header {
     top: 0;
     position: fixed;

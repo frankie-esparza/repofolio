@@ -26,10 +26,6 @@
     display: block;
 }
 
-.filters-form {
-    border-radius: var(--border-radius-thumbnails);
-}
-
 select {
     border: none;
 }
