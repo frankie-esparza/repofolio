@@ -20,22 +20,23 @@ A library that ✨ magically ✨ generates a dynamic portfolio from your Github 
 <img src="https://storage.googleapis.com/frankie-esparza-portfolio/screenshots/repofolio-3.png" width="700">
 <br></br>
 
-
 ## Setup 
 ### Installation
 1) Install PostgreSQL
 2) Install Python 
 3) Install Pipenv `pip install pipenv`  
 4) Create a Virtual Environment `pipenv install --python "$PYENV_ROOT/versions/<<version_of_python_you_installed>>/bin/python"`
-5) Install all the dependencies for the Python App `npm install`
-6) Create `.env` file and make the contents:
+5) Install all the dependencies `npm install`
+6) Create `.env` file that contains the following:
 ```
 FLASK_ENV=development
 SECRET_KEY=<insert-secret-key-here>
 DATABASE_URL=postgresql://repofolio:<insert-database-password-here>@localhost/repofolio
 ```    
-7) Create .flaskenv file `FLASK_APP=repofolio.py`    
-
+7) Create `.flaskenv` file that contains the following:
+```
+`FLASK_APP=repofolio.py`    
+```
 
 ### Run the App Locally
 1) Create the PostgreSQL database:
@@ -55,7 +56,7 @@ CREATE DATABASE repofolio WITH OWNER repofolio;
 7) If prompted to login to Github or create a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) follow the prompts
 
 ### Customization  
-Go to the `customizations` directory and follow all of the instructions everywhere it says `TODO`
+Go to the `/customizations` directory and follow all of the instructions everywhere it says `TODO`
 1. `added_props_for_existing_repos.py`
     - 🎥 optionally add videos & thumbnails
     - ⭐️ optionally add highlighted repos & repo priority rankings

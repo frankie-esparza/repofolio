@@ -36,13 +36,3 @@ HEADER_ICON_BUTTONS = [
         'icon': 'fa fa-envelope'
     }
 ]
-
-FILTERS = {
-    'All Projects': '',
-    'Full-stack': 'postgresql',
-    'React' : 'react',
-    'Python': 'flask',
-    'Back-end': 'sql',
-    'Data Structures': 'data-structures',
-    'Algorithms': 'algorithms',
-}

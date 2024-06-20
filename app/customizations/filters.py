@@ -9,10 +9,10 @@
 #    - 'value' is the 'topic' that is in Github (case & dash sensitive)
 FILTERS = {
     'All Projects': '',         # recommendation: leave this filter here
-    'Full-stack': 'postgresql', # note: this filter works well for me, since all my full-stack projects have the 'postgresql' topic
+    'Full Stack': 'postgresql', # note: this filter works well for me, since all my full-stack projects have the 'postgresql' topic
     'React' : 'react',
     'Python': 'flask',
-    'Back-end': 'sql',          # note: this filter works well for me, since all my back-end projects have the 'sql' topic 
+    'Back End': 'sql',          # note: this filter works well for me, since all my back-end projects have the 'sql' topic 
     'Data Structures': 'data-structures',
     'Algorithms': 'algorithms',
 }

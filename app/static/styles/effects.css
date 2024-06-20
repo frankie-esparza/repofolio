@@ -5,6 +5,5 @@ option:hover,
 #submit:hover,
 a:hover,
 a > strong:hover {
-    font-weight: 500;
-    transition: font-weight 0.2s;
+    text-shadow: 0 0 0.5px var(--black);
 }

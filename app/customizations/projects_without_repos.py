@@ -28,8 +28,8 @@ PROJECTS_WITHOUT_REPOS = [
         'name': 'plenty-heatsinks',
         'display_name': 'cost optimization',
         'description': '''
-            Wrote a Matlab model to cost-optimize the design of the heatsinks of air-cooled LED Lights for a novel 
-            thermal management system (US Patent 63,007,016).\n 
+            Developed a model to optimize lighting design for cost and efficiency, guiding architecture
+            changes that led to a 60% reduction in production and operational costs\n 
         ''',
         'topics': [
             'matlab'
@@ -44,7 +44,7 @@ PROJECTS_WITHOUT_REPOS = [
         'name': 'neuralink-testing',
         'display_name': 'automated testing',
         'description': '''
-            Wrote a Python script to automatically check for manufacturing defects for a brain implant.
+            Built software & hardware for an automated test of a critical safety feature of the implant
         ''',
         'topics': [
             'python',
@@ -61,8 +61,8 @@ PROJECTS_WITHOUT_REPOS = [
         'name': 'streetcode',
         'display_name': 'streetcode',
         'description': '''
-            Designed curriculum and hands-on workshops empowering students to bring their ideas to life 
-            using the design process, code, electronics, 3D printing, and CAD modeling
+            Designed curriculum and hands-on workshops empowering students to bring their ideas
+            to life using the design process, code, electronics, 3D printing, and CAD modeling
         ''',
         'video_filename': 'streetcode.mp4',
         'thumbnail_filename': 'streetcode.png',

@@ -30,21 +30,28 @@
     border-radius: var(--border-radius-thumbnails);
 }
 
+select {
+    border: none;
+}
+
 option {
+    font-weight: 300;
     padding: 2px;
     display: flex;
     justify-content: center;
+    border-radius: var(--border-radius-buttons);
 }
 
 .select-multiple-field{
     height: 180px;
-    width: fit-content;
+    width: 150px;
     border: 2px solid var(--light-grey);
     border-radius: var(--border-radius-dropdown);
     padding: 5px;
     margin: 5px;
     padding-right: 15px;
     font-size: var(--font-large);
+    overflow: hidden
 }
 
 .select-multiple-field:focus{
