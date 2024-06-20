@@ -1,4 +1,4 @@
-from app.customizations.customizable_constants import GITHUB_USERNAME, MAX_REPOS_IN_GET_QUERY
+from app.customizations.settings import GITHUB_USERNAME, MAX_REPOS_IN_GET_QUERY
 from app.models import PROPS_NOT_IN_GITHUB_RESPONSE
 from app.models import db, Repo
 from sqlalchemy import or_
@@ -41,17 +41,38 @@ def get_repos_from_github_and_add_to_db():
     add_repos_to_db(repos_filtered)
 
 
+def add_repos_to_db(repos):
+    try:
+        for repo in repos:
+            repo_in_database = get_repo_by_name(repo['name'])
+            if not repo_in_database:
+                new_repo = Repo(**repo)
+                db.session.add(new_repo)
+                db.session.commit()
+        print('\n🎉 Added these repos to the database:\n', get_repos_string(repos) )
+    except Exception as err:
+        print(f'❌ Error while adding repos to the database\n', err)
+
+
+def get_repos_from_github():
+    token = os.getenv('GITHUB_ACCESS_TOKEN')
+    url = f'https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page={MAX_REPOS_IN_GET_QUERY}'
+    header =  { 'Authorization': f'Bearer {token}' }
+    try:
+        res = requests.get(url, header)
+        res.raise_for_status()  # Raise an exception for HTTP errors
+        repos = json.loads(res.text)
+        print('\n🎉 Got these repos from Github:\n', get_repos_string(repos))
+        return repos 
+    except Exception as err: 
+        print(f'\n❌ Error while getting repos from Github.\n', err)
+
+
 # ----------------------
 # HELPERS
 # ----------------------
-def add_repos_to_db(repos):
-    for repo in repos:
-        repo_in_database = get_repo_by_name(repo['name'])
-        if not repo_in_database:
-            new_repo = Repo(**repo)
-            db.session.add(new_repo)
-            db.session.commit()
-    print('✅ Added repos to db')
+def get_repos_string(repos):
+    return (', ').join(list(map(lambda repo: repo['name'], repos)))
 
 
 def delete_repos_from_db(repos):
@@ -59,7 +80,6 @@ def delete_repos_from_db(repos):
         repo = get_repo_by_id(repo.id)
         db.session.delete(repo)
         db.session.commit()
-        print('✅ Deleted repo from db')
 
 
 def get_repo_by_id(id):
@@ -83,20 +103,6 @@ def update_repo(repo_name, new_props):
          setattr(repo, key, value)
     db.session.commit()
 
-# -------------------
-# GITHUB API
-# -------------------
-def get_repos_from_github():
-    token = os.getenv('GITHUB_ACCESS_TOKEN')
-    url = f'https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page={MAX_REPOS_IN_GET_QUERY}'
-    header =  { 'Authorization': f'Bearer {token}' }
-    try:
-        res = requests.get(url, header)
-        repos = json.loads(res.text)
-        print('🐯 Got repos from github')
-        return repos 
-    except: 
-        print(f'❌ Error while getting repos.\n {res}')
 
 
 def filter_out_unused_props_from_github(repos):
@@ -109,7 +115,6 @@ def filter_out_unused_props_from_github(repos):
         values = map(lambda key: repo[key], keys)
         new_repo = dict(zip(keys, values))
         filtered_repos.append(new_repo)
-    print('✅ Filtered unused props from github')
     return filtered_repos
 
 

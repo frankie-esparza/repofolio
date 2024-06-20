@@ -13,7 +13,7 @@ db = SQLAlchemy()
 
 # the Repo class represents a single project, most often associated with a particular repo in Github 
 # you can also have instance of the Repo class that are not associated with projects in Github 
-# (see comments in /customizations/projects_without_repos.py)
+# (see comments in /customizations/add_projects_without_repos.py)
 class Repo(db.Model):
     __tablename__ = "repos"
 

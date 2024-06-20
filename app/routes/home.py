@@ -4,7 +4,7 @@ from app.constants.constants import (
     PAGES, 
     RESUME_BUTTON_NAME,
 )
-from app.customizations.customizable_constants import (
+from app.customizations.settings import (
     EMAIL,
     FAVICON_URL, 
     FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER,
