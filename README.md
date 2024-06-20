@@ -57,16 +57,16 @@ CREATE DATABASE repofolio WITH OWNER repofolio;
 
 ### Customization  
 Go to the `/customizations` directory and follow all of the instructions everywhere it says `TODO`
-1. `added_props_for_existing_repos.py`
+1. `add_priority_and_highlight.py`
     - 🎥 optionally add videos & thumbnails
     - ⭐️ optionally add highlighted repos & repo priority rankings
-2. `customizable_constants.py`
+2. `settings.py`
     - 📸 add your profile pic, resume, Github username & LinkedIn username
     - 📁 add storage urls (e.g. add details for a Google Cloud Storage bucket)
     - ⏰ set how often you want your repofolio to refresh
 3.  `filters.py` 
     - 🔎 choose which [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) you want your viewers to be able to filter by 
-4.  `projects_without_repos.py` 
+4.  `add_projects_without_repos.py` 
     - 🔧 optionally add projects without repos in the 
 5.  `/templates/home.html` 
     - 📝 add a summary about yourself

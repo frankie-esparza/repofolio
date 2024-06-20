@@ -1,4 +1,4 @@
-from app.customizations.customizable_constants import (
+from app.customizations.settings import (
     LINKEDIN_USERNAME, 
     GITHUB_USERNAME, 
     RESUME_URL, 
