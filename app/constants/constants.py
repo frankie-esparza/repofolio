@@ -4,9 +4,6 @@ from app.customizations.customizable_constants import (
     RESUME_URL, 
     EMAIL
 )
-SECONDS_PER_DAY = 60*60*24
-FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER = SECONDS_PER_DAY
-MAX_REPOS_IN_GET_QUERY = 50
 
 PAGES = { 
     'Home': '/',
