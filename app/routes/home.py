@@ -54,7 +54,7 @@ def index():
     if not request.cookies.get('has_visited'):
         update_database()
         response = make_response(redirect(url_for('home.refresh')))
-        response.set_cookie('has_visited', 'False', max_age=FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER)
+        response.set_cookie('has_visited', True, max_age=FIRST_TIME_VISIT_COOKIE_EXPIRES_AFTER)
         return response
     
     # get 'topic' tags from query params

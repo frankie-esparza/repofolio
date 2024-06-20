@@ -28,11 +28,3 @@ ADDED_PROPS_FOR_EXISTING_REPOS = {
         'highlighted': False
     }
 }
-
-
-def get_video_filename_from_repo_name(name):
-    return f'{name}.mp4'
-
-
-def get_thumbnail_filename_from_repo_name(name):
-    return f'{name}.png'
