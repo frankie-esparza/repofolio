@@ -43,3 +43,7 @@ h4 {
 .highlight-section-titles {
     line-height: .5;
 }
+
+.repo-description {
+    margin-inline: 20px;
+}
