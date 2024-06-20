@@ -9,22 +9,20 @@ ADDED_PROPS_FOR_EXISTING_REPOS = {
     },
     'ube': {
         'priority': 7,
-        'highlighted': False
     },
     'yuca': {
         'priority': 8,
-        'highlighted': False
     },
      'repofolio': {
         'priority': 9,
-        'highlighted': False
     },
      'crayons': {
         'priority': 10,
-        'highlighted': False
     },
        'tropical': {
         'priority': 11,
-        'highlighted': False
+    },
+       'obelisk': {
+        'priority': 12,
     }
 }

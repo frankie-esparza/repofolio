@@ -1,23 +1,22 @@
 <div class="repo centered-vertical-container">
     {% if repo.video_filename %}
         {% include "/components/video.html" %}
+        <div class="centered-horizontal-container">
+            <h2>{{ repo.name }}</h2>
+            <!-- Include Github button if there is a Github -->
+            {% if repo.html_url %}
+                {% include "/components/buttons/github.html" %}
+            {% endif %}
+            
+            <!-- Include 'Try it' button if there is a demo homepage -->
+            {% if repo.homepage %}
+                {% include "/components/buttons/try_it.html" %}
+            {% endif %}
+        </div>
+    {% else %}
+        {% include "/components/non-repo-thumbnail.html" %}
     {% endif %}
-
-    <div class="centered-horizontal-container">
-        <h2>{{ repo.name }}</h2>
-        <!-- Include Github button if there is a Github -->
-        {% if repo.html_url %}
-            {% include "/components/buttons/github.html" %}
-        {% endif %}
-        
-        <!-- Include 'Try it' button if there is a demo homepage -->
-        {% if repo.homepage %}
-            {% include "/components/buttons/try_it.html" %}
-        {% endif %}
-    </div>
-
     <p class="repo-description">{{ repo.description }}</p>
-    
     {% if repo.topics %}
     {% include "/components/topics.html" %}
     {% endif %}

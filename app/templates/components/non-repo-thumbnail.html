@@ -1,0 +1,12 @@
+    <div class="video-container centered-horizontal-container non-repo-thumbnail">
+            <h2 class="non-repo-name">{{ repo.name }}</h2 class="non-repo-name">
+            <!-- Include Github button if there is a Github -->
+            {% if repo.html_url %}
+                {% include "/components/buttons/github.html" %}
+            {% endif %}
+            
+            <!-- Include 'Try it' button if there is a demo homepage -->
+            {% if repo.homepage %}
+                {% include "/components/buttons/try_it.html" %}
+            {% endif %}
+    </div>

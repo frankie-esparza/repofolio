@@ -20,9 +20,13 @@ def update_database():
     repo_names = list(ADDED_PROPS_FOR_EXISTING_REPOS.keys())
 
     for repo_name in repo_names:
-        thumbnail_and_video_filenames = {
-            'thumbnail_filename': f'{repo_name}.png',
-            'video_filename': f'{repo_name}.mp4'
-        }
+        thumbnail_and_video_filenames = {}
+        # if repo is highlighted, add links for the thumbnail & video 
+        if ADDED_PROPS_FOR_EXISTING_REPOS[repo_name].get('highlighted'): 
+            thumbnail_and_video_filenames = {
+                'thumbnail_filename': f'{repo_name}.png',
+                'video_filename': f'{repo_name}.mp4'
+            }
+        # update repo with additional props
         props_to_add = {**thumbnail_and_video_filenames, **ADDED_PROPS_FOR_EXISTING_REPOS[repo_name]}
         update_repo(repo_name, props_to_add)
