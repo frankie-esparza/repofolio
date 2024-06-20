@@ -27,8 +27,14 @@ nav > ul {
 }
 
 .page-navlink {
+    padding: 10px;
     margin-inline: 10px;
     margin-block: 20px;
+}
+
+.dropdown-navlink {
+    padding: 0px;
+    margin: 7px;
 }
 
 .social-nav {

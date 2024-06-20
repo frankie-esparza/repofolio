@@ -8,11 +8,11 @@
 #    - 'key' is the how the filter will be displayed on the web page 
 #    - 'value' is the 'topic' that is in Github (case & dash sensitive)
 FILTERS = {
-    'All Projects': '',         # recommendation: leave this filter here
+    'All': '',         # recommendation: leave this filter here
     'Full Stack': 'postgresql', # note: this filter works well for me, since all my full-stack projects have the 'postgresql' topic
     'React' : 'react',
     'Python': 'flask',
     'Back End': 'sql',          # note: this filter works well for me, since all my back-end projects have the 'sql' topic 
-    'Data Structures': 'data-structures',
     'Algorithms': 'algorithms',
+    'Data Structures': 'data-structures',
 }
