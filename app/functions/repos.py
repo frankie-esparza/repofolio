@@ -55,9 +55,20 @@ def add_repos_to_db(repos):
 
 
 def get_repos_from_github():
-    token = os.getenv('GITHUB_ACCESS_TOKEN')
     url = f'https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page={MAX_REPOS_IN_GET_QUERY}'
-    header =  { 'Authorization': f'Bearer {token}' }
+    header = {}
+
+    # --------------------------------------------------------------------
+    # Note: If you get the "❌ Error while getting repos from Github" error
+    # try: 
+    # 1) Authenticating from the command line - https://docs.github.com/en/get-started/getting-started-with-git/set-up-git
+    # 2) Getting a "personal access token" from github - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+    # 3) Add the GITHUB_ACCESS_TOKEN to your .env file
+    # 3) Uncomment the lines below 
+    # 
+    # token = os.getenv('GITHUB_ACCESS_TOKEN')
+    # header =  { 'Authorization': f'Bearer {token}' }
+    # ----------------------------------------------------------------------
     try:
         res = requests.get(url, header)
         res.raise_for_status()  # Raise an exception for HTTP errors
