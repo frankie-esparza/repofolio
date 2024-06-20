@@ -1,6 +1,17 @@
 <div class="dropdown">
     <a class="navlink page-navlink dropdown">{{ key }}</a>
     <div class="dropdown-content">
-        {% include "/components/navs/filters.html" %}
+        <ul>
+            {% for filter in FILTERS %}
+            <li class="centered-vertical-container">
+                {% if filter == 'All' %}
+                <a class="navlink dropdown-navlink" href="/more">{{ filter }}</a>
+                {% else%}
+                <a class="navlink dropdown-navlink" href="/more?topic={{ FILTERS[filter] }}">{{ filter }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        
     </div>
 </div>
