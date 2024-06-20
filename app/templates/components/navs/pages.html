@@ -3,12 +3,7 @@
         {% for key, value in PAGES.items() %}
         {% if key == 'More' %}
         <li>
-            <div class="dropdown">
-                <a class="navlink page-navlink dropdown">{{ key }}</a>
-                <div class="dropdown-content">
-                    {% include "/components/navs/filters.html" %}
-                </div>
-            </div>
+            {% include "/components/navs/dropdown.html" %}
         </li>
         {% else %}
         <li>

@@ -51,7 +51,7 @@
 
     .navlink {
         font-size: var(--font-large);
-        padding-inline: 10px;
+        padding-inline: 5px;
     }
 
     button {
@@ -103,4 +103,13 @@
     .desktop-video.clicked {
         width: var(--video-width-on-click-mobile); 
     }
+
+    .dropdown:hover .dropdown-content {
+        transform: translateX(-80%);
+    }
+
+    .dropdown-content {
+        width: 260;
+    }
+    
 }
