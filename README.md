@@ -29,7 +29,7 @@ A library that generates a dynamic portfolio that ✨ updates itself ✨ whenver
 
 ### Run the App Locally
 1) Create the PostgreSQL database:
-```
+```sql
 cd repofolio
 psql    
 DROP DATABASE repofolio; 
