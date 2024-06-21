@@ -3,7 +3,7 @@ A library that generates a dynamic portfolio that ✨ updates itself ✨ whenver
 
 ## Features 
 - 🪄 Automatic updates when you add a new public repo
-- 💥 Automatic updates when you change a repo's name, description, or homepage
+- ✨ Automatic updates when you change a repo's name, description, or homepage
 - 🔎 Viewers of your repofolio can easily filter your repos by [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
 - ⭐️ Draw attention to your favorite repos with **highlights**
 - 🏆 Set the **priority** of repos so your favorites show up first
