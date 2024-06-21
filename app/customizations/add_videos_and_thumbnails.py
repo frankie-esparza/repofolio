@@ -19,5 +19,4 @@ REPOS_WITH_VIDEOS_OR_THUMBNAILS = [
     'yuca',
     'repofolio',
     'crayons',
-    'tropical',
 ]

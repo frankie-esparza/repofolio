@@ -30,6 +30,7 @@ body,
 .non-repo-thumbnail {
     background-color: var(--light-grey);
     border-radius: var(--border-radius-thumbnails);
+    border: 1px solid var(--medium-grey);
 }
 
 .repo-name {

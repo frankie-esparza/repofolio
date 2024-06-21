@@ -15,7 +15,7 @@
     width: 240;
     height: fit-content;
     border-radius: var(--border-radius-thumbnails);
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--medium-grey);
     z-index: 1;
     margin-left: 20px;
 }
