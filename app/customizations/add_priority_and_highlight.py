@@ -58,5 +58,8 @@ REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
     },
     'island': {
         'priority': 18,
+    },
+    'palm': {
+        'priority': 19
     }
 }

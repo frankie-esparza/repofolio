@@ -20,8 +20,8 @@ from flask import (
     redirect, render_template, url_for
 )
 from app.functions.repos import (
-    get_repos_from_db, 
-    get_repos_from_db_filtered_by_topics,
+    get_all_repos_from_db, 
+    get_all_repos_from_db_filtered_by_topics,
     get_highlighted_repos_from_db
 )
 from app.functions.database import update_database
@@ -86,9 +86,9 @@ def get_repos(topics, path):
     if len(topics) == 0 and path == '/highlights': 
         return get_highlighted_repos_from_db()
     if len(topics) == 0 and path == '/more':
-        return get_repos_from_db()
+        return get_all_repos_from_db()
     else: 
-        return get_repos_from_db_filtered_by_topics(topics)
+        return get_all_repos_from_db_filtered_by_topics(topics)
 
 
 def get_route(topics):

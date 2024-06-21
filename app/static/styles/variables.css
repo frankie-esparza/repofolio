@@ -4,6 +4,7 @@
     --ice: #E8F3FC;
     --sky: #A3CEF3;
     --light-grey: #E9ECEF;
+    --medium-grey: #DCDEE1;
     --grey: #B4B4B8;
     --cafe-con-leche: #D5BDAF;
     --sand: #BE9E84;
@@ -23,7 +24,7 @@
     --border-radius-buttons: 20px;
     --border-radius-thumbnails: 25px;
 
-    --header-height: 180px;
+    --header-height: 200px;
     --header-height-mobile: 250px;
 
     --profile-pic-size: 300px;

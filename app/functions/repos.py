@@ -1,16 +1,15 @@
 from app.customizations.settings import GITHUB_USERNAME, MAX_REPOS_IN_GET_QUERY
 from app.models import PROPS_NOT_IN_GITHUB_RESPONSE
 from app.models import db, Repo
-from sqlalchemy import or_
 import requests
 import json 
-import os 
 
-def get_repos_from_db():
+def get_all_repos_from_db():
     return (
         db.session.execute(
             db.select(Repo)
             .order_by(Repo.priority)
+            .filter(Repo.html_url != None)
         ).scalars().all()
     )
 
@@ -23,13 +22,12 @@ def get_highlighted_repos_from_db():
         ).scalars()
     )
 
-
-def get_repos_from_db_filtered_by_topics(topics):
+def get_all_repos_from_db_filtered_by_topics(topics):
     return (
         db.session.execute(
             db.select(Repo)
-             .filter(Repo.topics.overlap(topics))
-            .filter(or_(Repo.highlighted == False, Repo.highlighted == None))
+            .filter(Repo.html_url != None)
+            .filter(Repo.topics.overlap(topics))
             .order_by(Repo.priority)
         ).scalars()
     )
