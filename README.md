@@ -1,5 +1,5 @@
 # 🍿 Repofolio
-A library that ✨ magically ✨ generates a dynamic portfolio from your Github repos
+A library that generates a dynamic portfolio that ✨ updates itself ✨ whenver you update your Github repos. 
 
 ## Features 
 - 🪄 Automatic updates when you add a new public repo
