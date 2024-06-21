@@ -47,7 +47,7 @@ CREATE DATABASE repofolio WITH OWNER repofolio;
 
 ## Customize your Repofolio  
 1) ✅ Go to the `/customizations` directory and follow all of the instructions everywhere it says `TODO`
-2) 🏖️ Sit back and relax as your Repofolio automatically updates itself whenever you make updates in Github.
+2) 🪄 Sit back and relax as your Repofolio automatically updates itself whenever you make updates in Github.
 <br></br>
 
 ## Contact
