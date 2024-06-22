@@ -27,6 +27,10 @@
     .non-header {
         margin-top: var(--header-height-mobile);
     }
+
+    .non-video-name {
+        font-size: 30px;
+    }
 }
 
 
@@ -84,16 +88,12 @@
         margin-top: var(--header-height-mobile);
     }
 
-    .non-repo-name {
-        font-size: var(--font-largest);
-    }
-
     .icon-button {
         padding: 0px;
     }
 
     i {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     .social-nav-desktop {

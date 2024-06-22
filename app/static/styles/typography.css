@@ -44,11 +44,13 @@ h4 {
     line-height: .5;
 }
 
-.non-repo-name {
+.non-video-name {
     font-size: var(--font-thumbnail-title);
-    line-height: 1.5;
+    line-height: normal;
     text-align: center;
     padding-inline: 5px;
+    padding: 2px;
+    margin: 5px;
 }
 
 .repo-description {
