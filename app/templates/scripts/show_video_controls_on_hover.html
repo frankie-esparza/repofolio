@@ -1,15 +1,21 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         let videos = Array.from(document.getElementsByClassName('desktop-video'));
-        videos.forEach(video => {
-            video.controls = false;
-            video.addEventListener('mouseenter', function() {
-                video.controls = true;
-            });
-
-            video.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 1024) {
+            videos.forEach(video => {
                 video.controls = false;
-            });
-        })
+                video.addEventListener('mouseenter', function() {
+                    video.controls = true;
+                });
+
+                video.addEventListener('mouseleave', function() {
+                    video.controls = false;
+                });
+            })
+        }else{
+            videos.forEach(video => {
+                video.controls = true;
+            })
+        }
     })
 </script>
