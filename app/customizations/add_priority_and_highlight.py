@@ -37,29 +37,5 @@ REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
     },
     'tropical': {
         'priority': 11,
-    },
-    'obelisk': {
-        'priority': 12,
-    },
-     'pokemon': {
-        'priority': 13,
-    },
-    'museum': {
-        'priority': 14,
-    },
-    'music': {
-        'priority': 15,
-    },
-    'authenticate': {
-        'priority': 16,
-    },
-    'middleware': {
-        'priority': 17,
-    },
-    'island': {
-        'priority': 18,
-    },
-    'palm': {
-        'priority': 19
     }
 }
