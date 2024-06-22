@@ -37,5 +37,14 @@ REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
     },
     'tropical': {
         'priority': 11,
-    }
+    },
+    'island-finder': {
+        'priority': 12,
+    },
+    'friends': {
+        'priority': 13,
+    },
+    'binary-search-tree': {
+        'priority': 14,
+    },
 }

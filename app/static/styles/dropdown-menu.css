@@ -18,6 +18,7 @@
     border: 1px solid var(--medium-grey);
     z-index: 1;
     margin-left: 20px;
+    text-align: center;
 }
 
 .dropdown:hover .dropdown-content {

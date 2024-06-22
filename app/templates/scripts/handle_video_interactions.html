@@ -1,5 +1,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth > 768) {
             let videos = Array.from(document.querySelectorAll('video'));
     
             videos.forEach(function(video) {
@@ -68,6 +69,7 @@
             video.currentTime = 0;
             video.pause();
         }
+    }
     });
     </script>
     
