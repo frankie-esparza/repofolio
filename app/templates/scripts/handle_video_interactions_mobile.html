@@ -1,47 +1,57 @@
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.innerWidth <= 1024){
-        let videos = Array.from(document.querySelectorAll('video'));
-
-        videos.forEach(function(video) {
-            video.addEventListener('click', handleVideoInteraction); // clicks on the video
-            video.addEventListener('play', handleVideoInteraction); // clicks on the play button
-        });
-
-        // Listen for clicks OUTSIDE of the video
-        document.addEventListener('click', function(event) {
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth <= 1024){
+            let videos = Array.from(document.querySelectorAll('video'));
+    
             videos.forEach(function(video) {
-                const isClickedInsideVideo = video.contains(event.target);
-                if (!isClickedInsideVideo) {
-                    video.pause();
-                    video.currentTime = 0; // Reset to beginning instead of reloading
+                video.addEventListener('click', handleVideoInteraction); // clicks on the video
+                video.addEventListener('play', handleVideoInteraction); // clicks on the play button
+            });
+    
+            // Listen for clicks OUTSIDE of the video
+            document.addEventListener('click', function(event) {
+                videos.forEach(function(video) {
+                    const isClickedInsideVideo = video.contains(event.target);
+                    if (!isClickedInsideVideo) {
+                        video.poster = video.getAttribute('poster');
+                        video.load(); 
+                    }
+                });
+            });
+    
+            // Listen for Escape key press
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    videos.forEach(function(video) {
+                        video.poster = video.getAttribute('poster');
+                        video.load(); 
+                    });
                 }
             });
-        });
 
-        // Listen for Escape key press
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                videos.forEach(function(video) {
-                    video.pause();
-                    video.currentTime = 0; // Reset to beginning instead of reloading
+            function handleVideoInteraction(event) {
+                    if (event.type === 'click' || event.type === 'play') {
+                        pauseOtherVideos(videos, video);
+                    }
+            }
+    
+            function pauseOtherVideos(videos, currentVideo) {
+                videos.forEach(video => {
+                    if (video !== currentVideo) {
+                        pauseVideo(video);
+                    }
                 });
             }
-        });
-
-        function handleVideoInteraction(event) {
-            if (event.type === 'click' || event.type === 'play') {
-                pauseOtherVideos(videos, event.currentTarget); // Use event.currentTarget instead of video
+        
+            function pauseVideo(video) {
+                video.pause();
+            }
+        
+            function stopVideo(video) {
+                video.currentTime = 0;
+                video.pause();
             }
         }
-
-        function pauseOtherVideos(videos, currentVideo) {
-            videos.forEach(video => {
-                if (video !== currentVideo) {
-                    video.pause();
-                }
-            });
-        }
-    }
-});
-</script>
+    });
+    </script>
+    
