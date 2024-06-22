@@ -13,6 +13,5 @@ FILTERS = {
     'React' : 'react',
     'Python': 'flask',
     'Back End': 'sql',          # note: this filter works well for me, since all my back-end projects have the 'sql' topic 
-    'Algorithms': 'algorithms',
-    'Data Structures': 'data-structures',
+    'Data Structures & Algorithms': 'data-structures',
 }

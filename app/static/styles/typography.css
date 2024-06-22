@@ -46,6 +46,9 @@ h4 {
 
 .non-repo-name {
     font-size: var(--font-thumbnail-title);
+    line-height: 1.5;
+    text-align: center;
+    padding-inline: 5px;
 }
 
 .repo-description {
