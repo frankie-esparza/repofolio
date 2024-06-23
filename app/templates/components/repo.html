@@ -2,7 +2,11 @@
     {% if repo.video_filename %}
         {% include "/components/video.html" %}
         <div class="centered-horizontal-container">
+            {% if repo.display_name %}
+            <h2>{{ repo.display_name }}</h2>
+            {% else %}
             <h2>{{ repo.name }}</h2>
+            {% endif %}
             <!-- Include Github button if there is a Github -->
             {% if repo.html_url %}
                 {% include "/components/buttons/github.html" %}
