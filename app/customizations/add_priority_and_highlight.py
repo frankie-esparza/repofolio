@@ -38,13 +38,28 @@ REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
     'tropical': {
         'priority': 11,
     },
-    'island-finder': {
+    'pokemon': {
         'priority': 12,
     },
-    'friends': {
+    'museum': {
         'priority': 13,
     },
-    'binary-search-tree': {
+    'palm': {
         'priority': 14,
+    },
+    'island-finder': {
+        'priority': 15,
+    },
+    'binary-search-tree': {
+        'priority': 16,
+    },
+    'friends': {
+        'priority': 17,
+    },
+    'authenticate': {
+        'priority': 18,
+    },
+    'data-structures-and-algorithms': {
+        'priority': 19,
     },
 }
