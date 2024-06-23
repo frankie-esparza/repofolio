@@ -1,24 +1,21 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        if (window.innerWidth <= 1024){
+        if (window.innerWidth <= 1024) {
             let videos = Array.from(document.querySelectorAll('video'));
-    
-            // Show the video controls (play, volume, fullscreen)
-            videos.forEach(function(video) {
-                video.controls = true;
-            });
-    
-            // When user clicks outside of the video, reload the video 
-            // so that the thumbnail reappears & video restarts
-            videos.forEach(function(video) {           
-                document.addEventListener('click', function(event) {
-                    const isClickedInsideVideo = video.contains(event.target);
-                    if (!isClickedInsideVideo) {
-                        video.load(); 
-                    }
+            videos.forEach(video => video.controls = true);
+            let currentVideo = null;
+
+            videos.forEach(video => {
+                video.addEventListener('play', () => {
+                    if (currentVideo) currentVideo.load();
+                    currentVideo = video
                 });
+
+                video.addEventListener('pause', () => {
+                    video.load();
+                    currentVideo = null;
+                });          
             });
         }
     });
 </script>
-    

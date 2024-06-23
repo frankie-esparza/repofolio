@@ -3,6 +3,7 @@
         <video 
         class="desktop-video" 
         controls 
+        preloaded="auto"
         poster="{{ STATIC_FILES_URL_START }}/thumbnails/{{ repo.thumbnail_filename }}">
             <source 
             src="{{ STATIC_FILES_URL_START }}/videos/{{ repo.video_filename }}" 
