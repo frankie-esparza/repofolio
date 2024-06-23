@@ -1,69 +1,24 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        let videos = Array.from(document.getElementsByClassName('desktop-video'));
-        if (window.innerWidth <= 1024) {
-            videos.forEach(video => {
-                video.controls = true;
-            })
-        }
-    })
-</script>
-
-
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth <= 1024){
             let videos = Array.from(document.querySelectorAll('video'));
     
+            // Show the video controls (play, volume, fullscreen)
             videos.forEach(function(video) {
-                video.addEventListener('click', handleVideoInteraction); // clicks on the video
-                video.addEventListener('play', handleVideoInteraction); // clicks on the play button
+                video.controls = true;
             });
     
-            // Listen for clicks OUTSIDE of the video
-            document.addEventListener('click', function(event) {
-                videos.forEach(function(video) {
+            // When user clicks outside of the video, reload the video 
+            // so that the thumbnail reappears & video restarts
+            videos.forEach(function(video) {           
+                document.addEventListener('click', function(event) {
                     const isClickedInsideVideo = video.contains(event.target);
                     if (!isClickedInsideVideo) {
-                        video.poster = video.getAttribute('poster');
                         video.load(); 
                     }
                 });
             });
-    
-            // Listen for Escape key press
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    videos.forEach(function(video) {
-                        video.poster = video.getAttribute('poster');
-                        video.load(); 
-                    });
-                }
-            });
-
-            function handleVideoInteraction(event) {
-                    if (event.type === 'click' || event.type === 'play') {
-                        pauseOtherVideos(videos, video);
-                    }
-            }
-    
-            function pauseOtherVideos(videos, currentVideo) {
-                videos.forEach(video => {
-                    if (video !== currentVideo) {
-                        pauseVideo(video);
-                    }
-                });
-            }
-        
-            function pauseVideo(video) {
-                video.pause();
-            }
-        
-            function stopVideo(video) {
-                video.currentTime = 0;
-                video.pause();
-            }
         }
     });
-    </script>
-     -->
+</script>
+    
