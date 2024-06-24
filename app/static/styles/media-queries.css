@@ -23,10 +23,6 @@
         margin-top: var(--header-height-mobile);
     }
 
-    .non-video-name {
-        font-size: 30px;
-    }
-
     .social-nav {
         justify-content: center;
         margin: 0px;
@@ -40,14 +36,6 @@
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
-    }
-
-    .summary-desktop {
-        display: none;
-    }
-
-    .summary-mobile {
-        display: flex;
     }
 }
 
@@ -108,10 +96,6 @@
         padding: 0px;
         margin: 0px;
         margin-top: var(--header-height-mobile);
-    }
-
-    .non-video-name {
-        font-size: 70px;
     }
 
     .repo, 
