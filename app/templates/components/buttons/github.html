@@ -1,6 +1,8 @@
-<a class="navlink" href="{{ repo.html_url }}" target="_blank">
-    <button class="icon-button tooltip">
+{% if repo.html_url %}
+<a href="{{ repo.html_url }}" target="_blank">
+    <button class="icon-button repo-button tooltip">
         <i class="fa-brands fa-github repo-icon"></i>
         <span class="tooltiptext">Github</span>
     </button>
 </a>
+{% endif %}

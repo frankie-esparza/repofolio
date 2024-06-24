@@ -46,6 +46,8 @@ h4 {
 
 .non-video-name {
     font-size: var(--font-thumbnail-title);
+    font-weight: 300;
+    /* color: var(--grey); */
     line-height: normal;
     text-align: center;
     padding-inline: 5px;
@@ -54,9 +56,12 @@ h4 {
 }
 
 .repo-description {
-    margin-inline: 20px;
-}
-
+   width: 70%;
+   padding: 0px;
+   margin-block: 20px;
+   margin-inline: 0px;
+   margin-left: 20px;
+} 
 .summary-desktop {
     display: flex;
 }

@@ -1,11 +1,12 @@
 :root {
     --black: #202123;
+    --chalkboard: #202123;
     --white: #FFFFFF;
     --ice: #E8F3FC;
     --sky: #A3CEF3;
     --light-grey: #E9ECEF;
     --medium-grey: #DCDEE1;
-    --grey: #B4B4B8;
+    --grey: #8E9098;
     --cafe-con-leche: #D5BDAF;
     --sand: #BE9E84;
     --iced-coffee: #E0CEC3;
@@ -18,7 +19,7 @@
     --font-medium: 18;
     --font-small: 16;
     --font-smallest: 14;
-    --font-thumbnail-title: 32;
+    --font-thumbnail-title: 60;
 
     --border-radius-dropdown: 15px;
     --border-radius-buttons: 20px;
