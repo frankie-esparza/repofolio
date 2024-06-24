@@ -47,7 +47,6 @@ h4 {
 .non-video-name {
     font-size: var(--font-thumbnail-title);
     font-weight: 300;
-    /* color: var(--grey); */
     line-height: normal;
     text-align: center;
     padding-inline: 5px;
@@ -62,10 +61,3 @@ h4 {
    margin-inline: 0px;
    margin-left: 20px;
 } 
-.summary-desktop {
-    display: flex;
-}
-
-.summary-mobile {
-    display: none;
-}
