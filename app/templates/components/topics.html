@@ -1,5 +1,7 @@
+{% if repo.topics %}
 <ul class="centered-horizontal-container">
     {% for topic in repo['topics'] %}
     <li class="topic">{{ topic }}</li>
     {% endfor %}
 </ul>
+{% endif %}

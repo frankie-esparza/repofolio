@@ -59,7 +59,7 @@ REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
     'authenticate': {
         'priority': 18,
     },
-    'data-structures-and-algorithms': {
+    'data-structs-and-algos': {
         'priority': 19,
     },
 }

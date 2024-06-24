@@ -15,9 +15,10 @@
 .tooltip .tooltiptext {
     font-size: var(--font-smallest);
     visibility: hidden;
-    width: fit-content;
+    /* width: fit-content; */
+    width: 80px;
     text-align: center;
-    padding: 2px;
+    padding: 8px;
 
     /* Position the tooltip text */
     position: absolute;

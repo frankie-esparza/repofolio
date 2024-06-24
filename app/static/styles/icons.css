@@ -8,6 +8,19 @@ i {
     margin: 0px;
 }
 
+.icon-button {
+    padding: 0px;
+    margin: 10px;
+}
+
+.repo-button {
+    padding: 0px;
+    margin: 0px;
+}
+
 .repo-icon {
     font-size: 25px;
+    padding: 0px;
+    margin: 0px;
+    margin-right: 20px;
 }
