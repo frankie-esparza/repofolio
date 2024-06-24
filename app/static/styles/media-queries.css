@@ -9,6 +9,12 @@
         flex-direction: column;
     }
 
+    #intro-section-text {
+        font-size: var(--font-small);
+        width: var(--video-width-mobile);
+        padding: 10px;
+    }
+
     #mobile-title {
         display: flex;
         justify-content: center;
@@ -61,13 +67,6 @@
     .highlights-video {
         width: var(--video-width-mobile);
         height: var(--video-height-mobile);
-    }
-
-
-    #intro-section-text {
-        font-size: var(--font-small);
-        width: var(--video-width-mobile);
-        padding: 10px;
     }
 
     .desktop-video.clicked {

@@ -14,7 +14,6 @@
 
 #intro-section-text * {
     font-size: var(--font-large);
-    list-style-type: disc;
 }
 
 #highlights-page {
