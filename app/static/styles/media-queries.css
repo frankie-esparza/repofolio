@@ -97,6 +97,10 @@
         margin-top: var(--header-height-mobile);
     }
 
+    .non-video-name {
+        font-size: 35px;
+    }
+
     .repo, 
     .repos-container {
         width: 80vw;
