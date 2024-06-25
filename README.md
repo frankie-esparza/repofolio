@@ -1,5 +1,10 @@
 # 🍿 Repofolio
 Repofolio makes building your portfolio a breeze. Use the repofolio library to auto-generate a dynamic portfolio from your Github. Then, sit back and relax 🏖️ as your repofolio ✨ magically ✨ updates itself whenever you update Github. Plus, viewers of your portfolio will be able to filter your repos by topic to easily find what they're looking for.
+<br></br>
+
+## Demo Video
+🎬 Watch the demo video at [frankie.engineer/more](https://frankie.engineer)
+<br></br>
 
 ## Features 
 - 🪄 Automatic updates when you add a new public repo
