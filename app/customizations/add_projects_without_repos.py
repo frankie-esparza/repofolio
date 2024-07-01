@@ -44,4 +44,12 @@ PROJECTS_WITHOUT_REPOS = [
             to life using the design process, code, electronics, 3D printing, and CAD modeling
         ''',
     },
+     {
+        'name': 'resource-guide',
+        'display_name': 'Resource Guide',
+        'description': '''
+            A resource guide for building a web app with an LLM & Google Workspace APIs
+            plus lessons that I learned from building Thyme.
+        ''',
+    },
 ]

@@ -1,65 +1,33 @@
-REPOS_WITH_PRIORITY_OR_HIGHLIGHT = {
-    'thyme': {
-        'priority': 1,
-        'highlighted': True
-    },
-    'plenty-lights': {
-        'priority': 2,
-        'highlighted': True
-    },
-    'plenty-heatsinks': {
-        'priority': 3,
-        'highlighted': True
-    },
-    'neuralink': {
-        'priority': 4,
-        'highlighted': True
-    },
-    'streetcode': {
-        'priority': 5,
-        'highlighted': True
-    },
-    'kanban': {
-        'priority': 6,
-        'highlighted': True
-    },
-    'ube': {
-        'priority': 7,
-    },
-    'yuca': {
-        'priority': 8,
-    },
-    'repofolio': {
-        'priority': 9,
-    },
-    'crayons': {
-        'priority': 10,
-    },
-    'tropical': {
-        'priority': 11,
-    },
-    'pokemon': {
-        'priority': 12,
-    },
-    'museum': {
-        'priority': 13,
-    },
-    'palm': {
-        'priority': 14,
-    },
-    'island-finder': {
-        'priority': 15,
-    },
-    'binary-search-tree': {
-        'priority': 16,
-    },
-    'friends': {
-        'priority': 17,
-    },
-    'authenticate': {
-        'priority': 18,
-    },
-    'data-structs-and-algos': {
-        'priority': 19,
-    },
+REPOS_IN_PRIORITY_ORDER_WITH_HIGHLIGHT = {
+    'thyme': {'highlighted': True},
+    'plenty-lights': {'highlighted': True},
+    'plenty-heatsinks': {'highlighted': True},
+    'neuralink': {'highlighted': True},
+    'streetcode': {'highlighted': True},
+    'kanban': {'highlighted': True},
+    'resource-guide': {'highlighted': True},
+    'ube': {},
+    'yuca': {},
+    'repofolio': {},
+    'crayons': {},
+    'tropical': {},
+    'pokemon': {},
+    'museum': {},
+    'palm': {},
+    'island-finder': {},
+    'binary-search-tree': {},
+    'friends': {},
+    'authenticate': {},
+    'data-structs-and-algos': {},
 }
+
+def add_priority_prop(repos):
+    result = {}
+    for index, repo in enumerate(repos):
+        result[repo] = {
+            **repos[repo],
+            'priority': index 
+        }
+    return result
+
+REPOS_WITH_PRIORITY_OR_HIGHLIGHT = add_priority_prop(REPOS_IN_PRIORITY_ORDER_WITH_HIGHLIGHT)

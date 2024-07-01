@@ -14,6 +14,7 @@ REPOS_WITH_VIDEOS_OR_THUMBNAILS = [
     'plenty-heatsinks',
     'neuralink',
     'streetcode',
+    'resource-guide',
     'kanban',
     'ube',
     'yuca',
