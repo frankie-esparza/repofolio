@@ -48,8 +48,10 @@ PROJECTS_WITHOUT_REPOS = [
         'name': 'resource-guide',
         'display_name': 'Resource Guide',
         'description': '''
-            A resource guide for building a web app with an LLM & Google Workspace APIs
-            plus lessons that I learned from building Thyme.
+            A resource guide for building web apps with LLMs & Google Workspace APIs
+            plus lessons learned from building Thyme. Click the link to watch the video 
+            on YouTube & access the resources.
         ''',
+        'homepage': 'https://youtu.be/HDznguxTmtQ?si=AgugI9WYaQ5O4fFQ'
     },
 ]
