@@ -8,13 +8,29 @@
 # - Add a thumbnail file called 'thyme.png' to {STATIC_FILES_URL_START}/thumbnails 
 # - Add 'thyme' to the array below 
 # ---------------------------------------------------------------------------------------------------------
-REPOS_WITH_VIDEOS_OR_THUMBNAILS = [
+REPOS_WITH_THUMBNAILS = [
     'thyme',
     'plenty-lights',
     'plenty-heatsinks',
     'neuralink',
     'streetcode',
-    'resource-guide',
+    'thyme-resource-guide',
+    'thyme-architecture',
+    'thyme-database',
+    'kanban',
+    'ube',
+    'yuca',
+    'repofolio',
+    'crayons',
+]
+
+REPOS_WITH_VIDEOS = [
+    'thyme',
+    'plenty-lights',
+    'plenty-heatsinks',
+    'neuralink',
+    'streetcode',
+    'thyme-resource-guide',
     'kanban',
     'ube',
     'yuca',

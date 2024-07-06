@@ -1,6 +1,8 @@
 <div class="repo centered-vertical-container">
     {% if repo.video_filename %}
         {% include "/components/video.html" %}
+    {% elif repo.thumbnail_filename %}
+        {% include "/components/non-video-thumbnail-custom.html" %}
     {% else %}
         {% include "/components/non-video-thumbnail.html" %}
     {% endif %}

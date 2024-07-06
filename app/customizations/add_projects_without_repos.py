@@ -45,13 +45,28 @@ PROJECTS_WITHOUT_REPOS = [
         ''',
     },
      {
-        'name': 'resource-guide',
-        'display_name': 'Resource Guide',
+        'name': 'thyme-resource-guide',
+        'display_name': 'resource guide',
         'description': '''
             A resource guide for building web apps with LLMs & Google Workspace APIs
-            plus lessons learned from building Thyme. Click the link to watch the video 
-            on YouTube & access the resources.
+            plus lessons learned from building Thyme. Click the link to 
+            access the resources.
         ''',
         'homepage': 'https://youtu.be/HDznguxTmtQ?si=AgugI9WYaQ5O4fFQ'
+    },
+     {
+        'name': 'thyme-architecture',
+        'display_name': 'thyme architecture',
+        'description': '''
+            A fullstack architecture diagram for Thyme including OpenAI API calls, 
+            Google API calls, and custom functions for improving LLM performance.
+        '''
+    },
+     {
+        'name': 'thyme-database',
+        'display_name': 'thyme database',
+        'description': '''
+            A database diagram for Thyme for storing user preferences & LLM chat history.
+        '''
     },
 ]
