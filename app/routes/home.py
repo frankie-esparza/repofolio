@@ -71,7 +71,7 @@ def index():
 @bp.route('/refresh')
 def refresh():
     update_database()
-    return redirect (url_for('home.index'))
+    return redirect('/')
 
 
 @bp.errorhandler(404)
