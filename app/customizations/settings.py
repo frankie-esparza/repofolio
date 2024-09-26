@@ -4,7 +4,7 @@
 NAME= 'Frankie Esparza'
 SHORT_NAME = 'Frankie'      # short version of your name shows up on mobile devices
 EMAIL='fwesparza@gmail.com' # doesn't need to be a gmail account
-GITHUB_USERNAME = 'frankie-engineer'
+GITHUB_USERNAME = 'frankie-esparza'
 MAX_REPOS_IN_GET_QUERY = 50 # number of repos the Github API will GET, set this to the max number of repos you think you'll have in your Github set to public
 
 # -------------------------------------------
