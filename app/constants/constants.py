@@ -25,11 +25,11 @@ HEADER_ICON_BUTTONS = [
         'url': f'https://www.linkedin.com/in/{LINKEDIN_USERNAME}/',
         'icon': 'fa-brands fa-linkedin'
     },
-    # {
-    #     'name': f'{RESUME_BUTTON_NAME}',
-    #     'url': RESUME_URL,
-    #     'icon': 'fa-regular fa-file'
-    # },
+    {
+        'name': f'{RESUME_BUTTON_NAME}',
+        'url': RESUME_URL,
+        'icon': 'fa-regular fa-file'
+    },
     {
         'name': 'Email Me',
         'url': EMAIL_ME_URL,

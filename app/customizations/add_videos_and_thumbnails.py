@@ -9,13 +9,12 @@
 # - Add 'thyme' to the array below 
 # ---------------------------------------------------------------------------------------------------------
 REPOS_WITH_THUMBNAILS = [
-    # 'fullscript',
+    'fullscript',
     'thyme',
     'plenty-lights',
     'plenty-heatsinks',
     'neuralink',
     'streetcode',
-    # 'thyme-resource-guide',
     'thyme-architecture',
     'thyme-database',
     'kanban',
@@ -26,13 +25,12 @@ REPOS_WITH_THUMBNAILS = [
 ]
 
 REPOS_WITH_VIDEOS = [
-    # 'fullscript',
+    'fullscript',
     'thyme',
     'plenty-lights',
     'plenty-heatsinks',
     'neuralink',
     'streetcode',
-    # 'thyme-resource-guide',
     'kanban',
     'ube',
     'yuca',

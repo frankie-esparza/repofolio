@@ -1,12 +1,11 @@
 REPOS_IN_PRIORITY_ORDER_WITH_HIGHLIGHT = {
-    # 'fullscript': {'highlighted': True},
+    'fullscript': {'highlighted': True},
     'thyme': {'highlighted': True},
     'plenty-lights': {'highlighted': True},
     'plenty-heatsinks': {'highlighted': True},
     'neuralink': {'highlighted': True},
     'streetcode': {'highlighted': True},
     'kanban': {'highlighted': True},
-    # 'thyme-resource-guide': {'highlighted': True},
     'thyme-architecture': {'highlighted': True},
     'thyme-database': {'highlighted': True},
     'ube': {},
