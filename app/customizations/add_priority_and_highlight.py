@@ -6,7 +6,7 @@ REPOS_IN_PRIORITY_ORDER_WITH_HIGHLIGHT = {
     'neuralink': {'highlighted': True},
     'streetcode': {'highlighted': True},
     'kanban': {'highlighted': True},
-    'thyme-resource-guide': {'highlighted': True},
+    # 'thyme-resource-guide': {'highlighted': True},
     'thyme-architecture': {'highlighted': True},
     'thyme-database': {'highlighted': True},
     'ube': {},
