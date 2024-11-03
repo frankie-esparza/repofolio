@@ -1,4 +1,5 @@
 REPOS_IN_PRIORITY_ORDER_WITH_HIGHLIGHT = {
+    'fullscript': {'highlighted': True},
     'thyme': {'highlighted': True},
     'plenty-lights': {'highlighted': True},
     'plenty-heatsinks': {'highlighted': True},

@@ -10,6 +10,14 @@
 
 PROJECTS_WITHOUT_REPOS = [
      {
+        'name': 'fullscript',
+        'display_name': 'fullscript',
+        'description': '''
+            Building tools to help doctors deliver personalized root cause medicine at scale.
+        ''',
+        'topics': ['python', 'ruby-on-rails', 'typescript', 'react', 'django', 'graphql-apis', 'rest-apis', 'postgresql'],
+    },
+     {
         'name': 'plenty-lights',
         'display_name': 'custom led lights',
         'description': '''
@@ -24,8 +32,7 @@ PROJECTS_WITHOUT_REPOS = [
             Developed a model to optimize lighting design for cost and efficiency, guiding architecture
             changes that led to a 60% reduction in production and operational costs\n 
         ''',
-        'topics': ['matlab'],
-        'language': 'matlab',   
+        'topics': ['python', 'matlab'],
     },
     {
         'name': 'neuralink',
@@ -45,16 +52,6 @@ PROJECTS_WITHOUT_REPOS = [
         ''',
     },
      {
-        'name': 'thyme-resource-guide',
-        'display_name': 'resource guide',
-        'description': '''
-            A resource guide for building web apps with LLMs & Google Workspace APIs
-            plus lessons learned from building Thyme. Click the link to 
-            access the resources.
-        ''',
-        'homepage': 'https://youtu.be/HDznguxTmtQ?si=AgugI9WYaQ5O4fFQ'
-    },
-     {
         'name': 'thyme-architecture',
         'display_name': 'thyme architecture',
         'description': '''
@@ -69,4 +66,14 @@ PROJECTS_WITHOUT_REPOS = [
             A database diagram for Thyme for storing user preferences & LLM chat history.
         '''
     },
+     #  {
+    #     'name': 'thyme-resource-guide',
+    #     'display_name': 'resource guide',
+    #     'description': '''
+    #         A resource guide for building web apps with LLMs & Google Workspace APIs
+    #         plus lessons learned from building Thyme. Click the link to 
+    #         access the resources.
+    #     ''',
+    #     'homepage': 'https://youtu.be/HDznguxTmtQ?si=AgugI9WYaQ5O4fFQ'
+    # },
 ]
