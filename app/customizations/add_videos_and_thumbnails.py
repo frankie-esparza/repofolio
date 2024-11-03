@@ -9,7 +9,7 @@
 # - Add 'thyme' to the array below 
 # ---------------------------------------------------------------------------------------------------------
 REPOS_WITH_THUMBNAILS = [
-    'fullscript',
+    # 'fullscript',
     'thyme',
     'plenty-lights',
     'plenty-heatsinks',
@@ -26,7 +26,7 @@ REPOS_WITH_THUMBNAILS = [
 ]
 
 REPOS_WITH_VIDEOS = [
-    'fullscript',
+    # 'fullscript',
     'thyme',
     'plenty-lights',
     'plenty-heatsinks',
